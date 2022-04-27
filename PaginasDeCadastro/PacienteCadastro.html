@@ -15,7 +15,6 @@
   
   <link rel="stylesheet" href="css/Estilo.Css">
   
-  
   <title>MyMind</title>
 </head>
 <body>
@@ -48,19 +47,14 @@
         <div class = "container-fluid">
             <form class="form-horizontal" >
               <fieldset>
-
                   <div class="panel panel-primary">
-                      <div class="panel-heading">Cadastro de Psicólogo</div>
-                      
+                      <div class="panel-heading" id="titulo">Cadastro de Psicólogo</div>
                       <div class="panel-body">
                   <div class="form-group">
-                
                   <div class="col-md-11 control-label">
-                          <p class="help-block"><h11>*</h11> Campo Obrigatório </p>
+                      <p class="help-block"><h11>*</h11> Campo Obrigatório </p>
                   </div>
 
-                  
-                  
                   <!-- Text input-->
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="Nome">Nome completo <h11>*</h11></label>  
@@ -68,9 +62,7 @@
                     <input id="nomeCompleto" name="Nome" placeholder="" class="form-control input-md" required="" type="text">
                     </div>
                   </div>
-                  
                   <div class="form-group" id="form-group">
-                    
                     <label class="col-md-2 control-label" for="Nome">Nascimento</label>  
                     <div class="col-md-2">
                     <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA" class="form-control input-md" required="" type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
@@ -96,8 +88,6 @@
                     </label>
                   </div>
                   
-                  
-                  
                   <!-- Prepended text-->
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="prependedtext">Telefone <h11>*</h11></label>
@@ -108,9 +98,7 @@
                         OnKeyPress="formatar('## #####-####', this)">
                       </div>
                     </div>
-                    
                   </div>
-                    
                   
                   <!-- Prepended text-->
                   <div class="form-group">
@@ -123,7 +111,6 @@
                     </div>
                   </div>
                   
-                  
                   <!-- Search input-->
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="cpf">CPF (Cadastro de Pessoa Física) <h11>*</h11></label>
@@ -132,7 +119,6 @@
                     </div>
                   </div>                  
 
-                  
                   <!-- Search input-->
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="crp">CRP (Conselho Regional de Psicologia)<h11>*</h11></label>
@@ -140,7 +126,6 @@
                       <input id="crp" name="crp" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="11" pattern="[0-9]+$" OnKeyPress="formatar('###.###.###-##', this)">
                     </div>
                   </div>    
-
 
                   <!-- Search input-->
                   <div class="form-group">
@@ -158,13 +143,10 @@
                     </div>
                   </div>
         
-                  
                   <!-- Select Basic -->
                   <div class="form-group">
-
                     <label class="col-md-2 control-label" for="Há quanto tempo você atua como Psicólogo(a)?" > Há quanto tempo você atua como Psicólogo(a)? <h11>*</h11>
                     </label>
-
                     <div class="col-md-2">
                       <select required='' id="tempo" name="tempo" class="form-control" >
                           <option value=""></option>
@@ -182,15 +164,11 @@
                         <option value="Mais de 10 anos"> Mais de 10 anos </option>
                       </select>
                     </div>
-                    
                   </div>
                   
                   <!-- Select Basic -->
-                  
                   <div class="form-group">
-                      
                     <label class="col-md-2 control-label" for="selectbasic"> Como soube do app MyMind? <h11>*</h11></label>
-                    
                     <div class="col-md-3">
                       <select required id="Como soube do app MyMind? " name="Como soube do app MyMind? " class="form-control">
                       <option value=""></option>
@@ -205,105 +183,59 @@
                     </div>
                   </div>
 
-
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="Nome">Usuário <h11>*</h11></label>  
-                    
                     <div class="col-md-2">
                       <input id="descricao" name="Nome" placeholder="" class="form-control input-md" required="" type="text">
                     </div>
-
-                    
-                   
                   </div>
-
-                  
 
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="Nome">Senha <h11>*</h11></label>  
-
                     <div class="col-md-2">
                       <input id="descricao" name="Nome" placeholder="" class="form-control input-md" required="" type="password">
                     </div>
-
                     <label class="col-md-2 control-label" for="Nome">Confirmar Senha <h11>*</h11></label> 
-
                     <div class="col-md-2">
                      <input id="descricao" name="Nome" placeholder="" class="form-control input-md" required="" type="password">
                     </div>
-
-                   
                   </div>
-
 
                   <div class="form-check">
                     <input class="" type="checkbox" value="" id="flexCheckIndeterminate">
                     <label class="form-check-label" for="flexCheckIndeterminate">
                       Li e concordo com os Termos de Uso
                     </label>
-          
-
                   </div>
 
-
-                 
-                  
-                
-                 
-                  
                 </form>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
-                id="btn-cadastrar"  >
-             Cadastrar-se
-             </button>
-                
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                  id="btn-cadastrar">Cadastrar-se</button>
           </div>
-          
-
-          
-         
       </main>
-
-
-
-      
-
-      
-  
 
       <footer class="mdl-mini-footer mdl-layout--fixed-footer">
         <div class="mdl-mini-footer--left-section">
           <div class="mdl-logo">MyMind</div>
           <ul class="mdl-mini-footer--link-list">
-            <li ><a href="#"> link</a> </li>
-            <li><a href="#">link</a> </li>
           </ul>
-          
         </div>
       </footer>
     </div>
 
-
-    
     <div id="login">
       <div class="centralizar" >
-
         <div class="container-login">
-        
           <span class="txtlogin">Login</span>
           <img src="../../../assets/close.png" alt="close" class="close-button" id="close-button">
-       
         </div>
-       
-       
+      
         <form action="POST">
-          
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="sample1">
             <label class="mdl-textfield__label" for="sample1">Usuario</label>
           </div>
         </form>
-        
         <span class="txtlogin">Senha:</span>
         <form action="#">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -313,18 +245,15 @@
           </div>
         </form>
       
-        
-          
           <label class="container" id="txt-lembrarSenha">Lembrar minha conta
             <input type="checkbox" checked="checked">
             <span class="checkmark"></span>
           </label>
           
-        
           <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="btn-entrar">
               Acessar
           </button>
-        
+  
           <a href="#">
           <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="btn-cadastrar">
               Cadastrar-se
@@ -334,20 +263,11 @@
           <a href="./esquecer.html">
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="btn-esquecer">
               Esqueceu sua senha?
-  
             </button>
-            
           </a>
       
-            
-                
-
       </div>
     </div>
-
-
-
-
 
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <script type="module" src="./scripts/estagiario.js"></script>
