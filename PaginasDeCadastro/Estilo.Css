@@ -1,0 +1,34 @@
+
+#logo {
+    width:50%;
+    height:50%;
+}
+
+.panel-heading{
+font-size:150%;
+}
+
+#Cancelar{
+background-color:#950020;
+
+}
+#Cadastrar{
+background-color: #100095
+}
+
+.menu-cadastro{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .opcao-cadastro{
+    margin: 20px;
+  }
+
+  .txtesquecer{
+    color: #0D2E5C;
+    font-weight: bold;
+    font-family: Podkova;
+    font-size: 20px;
+    
+}
