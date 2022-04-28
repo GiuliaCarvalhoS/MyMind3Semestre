@@ -61,6 +61,7 @@ $btnEntrar.addEventListener('click',()=>{
     $senhaInvalida.style.display= 'block'
     
     
+    
   }
 })
 
