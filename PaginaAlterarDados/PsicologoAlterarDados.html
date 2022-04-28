@@ -56,17 +56,24 @@
                       <div class="panel-body">
                   <div class="form-group">
                   <div class="col-md-11 control-label">
-                      <p class="help-block"><h11>*</h11> Campo Obrigatório </p>
+                     
                   </div>
-
-                  <!-- Text input-->
-                  <div class="form-group">
+                  <form id="form-que-alterna">
+                    <div class="form-group">
                     <label class="col-md-2 control-label" for="Nome">Nome completo <h11>*</h11></label>  
+                    <div class="col-md-8">
+                    <input id="nome" name="Nome"  disabled= "true" placeholder="" class="form-control input-md" required="" type="text">
+                    </div>
+                    <button onclick = "habilitar()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"  id="btnAlterar"  >
+                     &#9998;
+                    </button></div>  
+                  </form>
+                  
+                  </div>
                     <div class="col-md-8">
                       <span id='erro-nome'>
                         *Tenha certeza de ter digitado um nome com mais de uma letra e sem números
                       </span>
-                    <input id="nomeCompleto" name="Nome" placeholder="" class="form-control input-md" required="" type="text" disabled="">
                     </div>
                   </div>
 
@@ -81,18 +88,18 @@
                   
                   <!-- Multiple Radios (inline) -->
                   <div class="form-group"></div>
-                    <label class="col-md-2 control-label"  disabled="" for="radios" disabled="">Sexo <h11>*</h11></label>
+                    <label class="col-md-2 control-label"  disabled="" for="radios" >Sexo <h11>*</h11></label>
                       <div class="col-md-4"> 
-                        <label required="" class="radio-inline" for="radios-0" >
-                          <input name="sexo" id="sexo" value="feminino" type="radio" required>
+                        <label required="" disabled="" class="radio-inline" for="radios-0" >
+                          <input disabled="" name="sexo" id="sexo" value="feminino" type="radio" required>
                           Feminino
                         </label> 
                         <label class="radio-inline" for="radios-1">
-                          <input name="sexo" id="sexo" value="masculino" type="radio">
+                          <input  disabled="" name="sexo" id="sexo" value="masculino" type="radio">
                           Masculino
                         </label>
                         <label class="radio-inline" for="radios-0">
-                          <input name="sexo" id="sexo" value="outro/prefiro não informar" type="radio">
+                          <input  disabled="" name="sexo" id="sexo" value="outro/prefiro não informar" type="radio">
                           Outro/Prefiro não informar
                         </label>
                       </div>
