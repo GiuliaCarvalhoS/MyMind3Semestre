@@ -270,7 +270,7 @@
     margin-top: 20px;
     background-color: #18C29C;
   }
-  #btn-cadastrar{
+  #btn-cadastrar, #btn-alterar{
     margin: 20px;
     border-radius: 50px;
     font-weight: bold;
