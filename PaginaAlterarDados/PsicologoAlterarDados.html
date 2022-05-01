@@ -45,7 +45,7 @@
     </div>
       <main >
         <div class = "container-fluid">
-            <form class="form-horizontal" >
+            <form class="form-horizontal"  onsubimit="testando()">
               <fieldset>
                   <div class="panel panel-primary">
                       <div class="panel-heading" id="titulo">Alteração do Cadastro</div>
@@ -121,7 +121,7 @@
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="cpf">CPF (Cadastro de Pessoa Física)</label>
                     <div class="col-md-2">
-                      <input id="cpf" name="cpf" placeholder="Apenas números" class="form-control input-md" disabled="" required="" value="" type="search" maxlength="11" pattern="[0-9]+$" OnKeyPress="formatar('###.###.###-##', this)">
+                      <input id="cpf" name="cpf" placeholder="Apenas números" class="form-control input-md">
                     </div>
                   </div>                  
 
@@ -216,7 +216,9 @@
 
                 </form>
                   <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
-                  id="btn-cadastrar">Alterar</button>
+                  id="btn-cadastrar"
+                  onclick="cadastrar()"
+                  >Alterar</button>
           </div>
       </main>
 
@@ -261,7 +263,7 @@
           </button>
   
           <a href="#">
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="btn-cadastrar">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="btn-cadastrar" >
               Cadastrar-se
           </button>
           </a>
@@ -275,9 +277,66 @@
       </div>
     </div>
 
+    <script>
+
+      function cadastrar(){
+      console.log("oi")
+      event.preventDefault()
+      const nome =  document.getElementById('nome').value ? "" : null
+      const telefone =  document.getElementById('telefone').value ? "" : null
+      const email =  document.getElementById('email').value ? "" : null
+      const cpf =  parseInt(document.getElementById('cpf').value) ? "" : null
+      const nomeUsuario =  document.getElementById('usuario').value ? "" : null
+      const senhaUsuario =  document.getElementById('senha').value ? "" : null
+      const url = `http://127.0.0.1:3333/psicologos/${cpf}`
+
+      
+      
+
+      const body = {
+        nome,
+        telefone,
+        email,
+        nomeUsuario,
+        senhaUsuario
+        
+      }
+        
+
+  
+   
+      
+    
+      fazpost(url, body)
+    }
+    
+    function fazpost(url, body){
+    
+      const req = new XMLHttpRequest()
+      req.open("PUT", url, true)
+      req.setRequestHeader('Content-type', 'application/json')
+    
+      req.send(JSON.stringify(body))
+    
+      req.onload = function(){
+        console.log(this.responseText)
+    
+    
+      }
+    
+      return req.responseText
+    
+    }
+    </script>
+
+
+
+
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <script type="module" src="./scripts/estagiario.js"></script>
   <script src="js/script.js"></script>
+
  
+
 </body>
 </html>
