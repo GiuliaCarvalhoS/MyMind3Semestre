@@ -135,20 +135,65 @@
                     </div>
                   </div>
 
-                  <!-- Text input-->
-                  <div class="form-group">
-                    <label class="col-md-2 control-label" for="Endereço Completo">Endereço Completo<h11>*</h11></label>  
-                    <div class="col-md-8">
-                    <input id="endereco" name="Endereço" placeholder="" class="form-control input-md" required="" type="text">
-                    </div>
+            
                   </div>
+                  <div class="form-group">
+                    <label class="col-md-2 control-label" for="cep">CEP <h11>*</h11></label>
+                    <div class="col-md-2">
+                      <input id="cep" name="cep" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="11" pattern="[0-9]+$" OnKeyPress="formatar('###.###.###-##', this)">
+                    </div>
+                  </div>        
+                </div>
+
+                <div class="form-group">
+                  <label class="col-md-2 control-label" for="Rua">Cidade<h11>*</h11></label> 
+                  <div class="col-md-8">
+                    <input id="cidade" name="cidade"placeholder="" class="form-control input-md" required="" type="text">
+                  </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="col-md-2 control-label" for="Bairro">Bairro<h11>*</h11></label> 
+                <div class="col-md-8">
+                  <input id="boirro" name="bairro" placeholder="" class="form-control input-md" required="" type="text">
+                </div>
+            </div>
+
+ 
+              <div class="form-group">
+                      <label class="col-md-2 control-label" for="Rua">Rua<h11>*</h11></label> 
+                      <div class="col-md-8">
+                        <input id="rua" name="rua" placeholder="" class="form-control input-md" required="" type="text">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-2 control-label" for="numero">Numero <h11>*</h11></label>
+                    <div class="col-md-2">
+                      <input id="numero" name="numero" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="11" pattern="[0-9]+$" OnKeyPress="formatar('###.###.###-##', this)">
+                    </div>
+                  </div>        
+           
+              <div class="form-group">
+                  <label class="col-md-2 control-label" for="Completo">Complemento</label> 
+                  <div class="col-md-8">
+                    <input id="complemento" name="complemento" placeholder="" class="form-control input-md" type="text">
+                  </div>
+              </div>
+
+
+              <div class="form-group">
+                <label class="col-md-2 control-label" for="Completo">Instituição de formção<h11>*</h11></label> 
+                <div class="col-md-8">
+                  <input id="InstituiçãoDeFormção" name="InstituiçãoDeFormção" placeholder="" class="form-control input-md" type="text">
+                </div>
+            </div>
+
         
                   <!-- Select Basic -->
                   <div class="form-group">
-                    <label class="col-md-2 control-label" for="Ano de Formação" > Ano de Formação <h11>*</h11>
-                    </label>
+                    <label class="col-md-2 control-label" for="anoDeFormacao">Ano de formação <h11>*</h11></label>
                     <div class="col-md-2">
-                      <input type="text" id="formacao">
+                      <input id="anoDeFormacao" name="anoDeFormacao" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="11" pattern="[0-9]+$" OnKeyPress="formatar('###.###.###-##', this)">
                     </div>
                   </div>
                   
