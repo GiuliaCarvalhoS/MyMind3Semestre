@@ -9,16 +9,20 @@ exports.up = function(knex) {
     table.bigint('cpf').unique();
     table.string('nome', 40).notNullable()
     table.string('dataNascimento', 11).notNullable()
-    table.string('endereco', 250).notNullable()
+    table.string('cidade', 40).notNullable()
+    table.string('cep', 9).notNullable()
+    table.string('rua', 80).notNullable()
+    table.string('bairro', 40).notNullable()
+    table.integer('numero', 5).notNullable()
+    table.string('complemento', 60)
     table.string('email', 250).notNullable()
     table.string('telefone', 14).notNullable()
     table.string('crp',15).notNullable()
-    table.string('linkEpsi',15).notNullable()
+    table.string('linkEpsi',15) .notNullable()
     table.integer('anoDeFormação',4).notNullable()
     table.string('nomeUsuario', 40).unique().notNullable();
     table.string('senhaUsuario', 40).notNullable()
 
-    
     
   
   })};
