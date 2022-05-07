@@ -90,14 +90,15 @@ module.exports = {
       
       
       await knex("psicologo").update({
-          nome: alteracaoPsicologo.nome,
-          endereco: alteracaoPsicologo.endereco, // Conversar com a professora
-          email: alteracaoPsicologo.email,
-          telefone: alteracaoPsicologo.telefone,
-          nomeUsuario: alteracaoPsicologo.nomeUsuario,
-          senhaUsuario: alteracaoPsicologo.senhaUsuario
+        nome: alteracaoPsicologo.nome,
+        endereco: alteracaoPsicologo.endereco, // Conversar com a professora
+        email: alteracaoPsicologo.email,
+        telefone: alteracaoPsicologo.telefone,
+        nomeUsuario: alteracaoPsicologo.nomeUsuario,
+        senhaUsuario: alteracaoPsicologo.senhaUsuario
       }).where({nomeUsuario})
-      return response.sed()
+      
+      return response.send(`${nomeUsuario}, Atualizado com sucesso`)
       
     } catch (error) {
       next(error)
@@ -108,11 +109,11 @@ module.exports = {
 
     try {
 
-      const {cpf}= request.params
+      const {nomeUsuario}= request.params
 
       await knex("psicologo").where({nomeUsuario}).del()
 
-      return response.send()
+      return response.send(`${nomeUsuario}, deletado com sucesso`)
       
     } catch (error) {
       next(error)
