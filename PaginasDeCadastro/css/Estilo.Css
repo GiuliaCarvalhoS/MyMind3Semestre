@@ -9,6 +9,7 @@ background-color:#950020;
 #Cadastrar{
 background-color: #100095
 }
+
 .panel-primary>.panel-heading{
 text-align: center;
 font-weight: bolder;
@@ -818,4 +819,14 @@ font-size: 20px;
   .centralizar{
     min-width: 100%;
   }
+}
+
+
+
+/* TESTE */
+
+#erro-complemento, #erro-crp, #erro-nome, #erro-data, #erro-email, #erro-numero, #erro-cpf, #erro-link, #erro-cep,
+#erro-cidade, #erro-bairro, #erro-rua, #erro-numeroclinica, #erro-instituicao, #erro-ano, #erro-usuario {
+  display: none;
+  color: red;
 }

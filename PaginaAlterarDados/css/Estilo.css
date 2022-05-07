@@ -826,3 +826,9 @@
     width: 5px;
   }
 
+
+  #erro-complemento, #erro-crp, #erro-nome, #erro-data, #erro-email, #erro-numero, #erro-cpf, #erro-link, #erro-cep,
+  #erro-cidade, #erro-bairro, #erro-rua, #erro-numeroclinica, #erro-instituicao, #erro-ano, #erro-usuario {
+    display: none;
+    color: red;
+  }

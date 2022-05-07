@@ -38,7 +38,8 @@ module.exports = {
         crp, 
         email,
         linkEpsi,
-        anoDeFormação, 
+        anoDeFormacao, 
+        instituicaoEnsino,
         nomeUsuario, 
         senhaUsuario,
         dataNascimento,
@@ -60,7 +61,8 @@ module.exports = {
           telefone,
           crp,
           linkEpsi,
-          anoDeFormação,
+          anoDeFormacao,
+          instituicaoEnsino,
           nomeUsuario,
           senhaUsuario
          })
@@ -94,7 +96,6 @@ module.exports = {
           endereco: alteracaoPsicologo.endereco, // Conversar com a professora
           email: alteracaoPsicologo.email,
           telefone: alteracaoPsicologo.telefone,
-          nomeUsuario: alteracaoPsicologo.nomeUsuario,
           senhaUsuario: alteracaoPsicologo.senhaUsuario
       }).where({nomeUsuario})
       return response.sed()
