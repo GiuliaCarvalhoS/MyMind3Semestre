@@ -65,7 +65,7 @@ module.exports = {
           senhaUsuario
          })
  
-         return response.status(201).send()
+         return response.status(201).send("Usuario cadastrado com sucesso")
  
  
  
