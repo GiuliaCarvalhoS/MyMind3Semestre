@@ -67,7 +67,7 @@ module.exports = {
           senhaUsuario
          })
  
-         return response.status(201).send()
+         return response.status(201).send("CADASTRO REALIZADO COM SUCESSO")
  
  
  
@@ -92,13 +92,19 @@ module.exports = {
       
       
       await knex("psicologo").update({
-          nome: alteracaoPsicologo.nome,
-          endereco: alteracaoPsicologo.endereco, // Conversar com a professora
+          nome: alteracaoPsicologo.nome, 
           email: alteracaoPsicologo.email,
           telefone: alteracaoPsicologo.telefone,
-          senhaUsuario: alteracaoPsicologo.senhaUsuario
+          senhaUsuario: alteracaoPsicologo.senhaUsuario,
+          cidade: alteracaoPsicologo.cidade,
+          cep: alteracaoPsicologo.cep,
+          rua: alteracaoPsicologo.rua,
+          bairro: alteracaoPsicologo.bairro,
+          numero: alteracaoPsicologo.numero,
+          complemento: alteracaoPsicologo.complemento,
       }).where({nomeUsuario})
-      return response.sed()
+      
+      return response.send(`${nomeUsuario}, Atualizado com sucesso`)
       
     } catch (error) {
       next(error)
@@ -109,11 +115,11 @@ module.exports = {
 
     try {
 
-      const {cpf}= request.params
+      const {nomeUsuario}= request.params
 
       await knex("psicologo").where({nomeUsuario}).del()
 
-      return response.send()
+      return response.send(`${nomeUsuario}, deletado com sucesso`)
       
     } catch (error) {
       next(error)
