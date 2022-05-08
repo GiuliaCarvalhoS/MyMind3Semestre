@@ -287,7 +287,7 @@
 
                 </form>
                   <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
-                  id="btn-cadastrar" onclick="cadastrar()">Cadastrar-se</button>
+                  id="btn-cadastrar" onclick="cadastrar(event)">Cadastrar-se</button>
           </div>
       </main>
 
@@ -350,8 +350,13 @@
   <script type="module" src="./scripts/estagiario.js"></script>
   <script src="js/script.js" ></script>
 <script>
-  function cadastrar(){
+
+  function cadastrar(event){
+
+    
     event.preventDefault()
+
+    debugger
     const url = "http://127.0.0.1:3333/psicologos"
     const nome =  document.getElementById('nomeCompleto').value
     const nascimento =  document.getElementById('dtnasc').value
@@ -395,7 +400,7 @@
 
 
     }
-    console.log(body)
+    
     
     fazpost(url, body)
   }
@@ -407,10 +412,14 @@
 
     req.send(JSON.stringify(body))
 
+    
+
     req.onload = function(){
+
       window.alert(this.responseText)
       console.log(this.responseText)
 
+      
 
     }
 
