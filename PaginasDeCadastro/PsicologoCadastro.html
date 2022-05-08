@@ -45,7 +45,7 @@
     </div>
       <main >
         <div class = "container-fluid">
-            <form class="form-horizontal" method="post" unsubimit="Cadastrar()" action="http://127.0.0.1:3333/psicologos">
+            <form class="form-horizontal" >
               <fieldset>
                   <div class="panel panel-primary">
                       <div class="panel-heading" id="titulo">Cadastro de Psicólogo</div>
@@ -59,13 +59,19 @@
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="Nome">Nome completo <h11>*</h11></label>  
                     <div class="col-md-8">
-                    <input id="nomeCompleto" name="Nome" placeholder="" class="form-control input-md" required="" type="text">
-                    </div>
+                      <span id='erro-nome'>
+                        *Tenha certeza de ter digitado um nome com mais de uma letra e sem números
+                      </span>
+                      <input id="nomeCompleto" name="Nome" placeholder="" class="form-control input-md" required="" type="text">
+                  </div>
                   </div>
                   <div class="form-group" id="form-group">
-                    <label class="col-md-2 control-label" for="Nome">Nascimento</label>  
+                    <label class="col-md-2 control-label" for="Data Nascimento">Data de Nascimento</label>  
                     <div class="col-md-2">
-                    <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA" class="form-control input-md" required="" type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
+                      <span id='erro-data'>
+                        *Parece que a data que você digitou não é valida. Tente dia/mês/ano
+                      </span>
+                    <input id="dtnasc" name="dtnasc" placeholder="DD/MM/AAAA" class="form-control input-md" required="" type="text" maxlength="10">
                   </div>
                   
                   <!-- Multiple Radios (inline) -->
@@ -92,10 +98,12 @@
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="prependedtext">Telefone <h11>*</h11></label>
                     <div class="col-md-2">
+                      <span id='erro-numero'>
+                        *Parece que o número que você digitou não é valida. Tente (dd) x xxxx-xxxx
+                      </span>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                        <input id="telefone" name="prependedtext" class="form-control" placeholder="XX XXXXX-XXXX" required="" type="text" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$"
-                        OnKeyPress="formatar('## #####-####', this)">
+                        <input id="telefone" name="prependedtext" class="form-control" placeholder="XX XXXXX-XXXX" required="" type="text" maxlength="13" pattern="\[0-9]{2}\ [0-9]{4,6}-[0-9]{3,4}$">
                       </div>
                     </div>
                   </div>
@@ -104,6 +112,9 @@
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="prependedtext">Email <h11>*</h11></label>
                     <div class="col-md-5">
+                      <span id='erro-email'>
+                        *Parece que o email que você digitou não é valida
+                      </span>
                       <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
                         <input id="email" name="prependedtext" class="form-control" placeholder="email@email.com" required="" type="text"  >
@@ -115,15 +126,23 @@
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="cpf">CPF (Cadastro de Pessoa Física) <h11>*</h11></label>
                     <div class="col-md-2">
-                      <input id="cpf" name="cpf" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="11" pattern="[0-9]+$" OnKeyPress="formatar('###.###.###-##', this)">
+                      <span id='erro-cpf'>
+                        *Parece que o CPF que você digitou não é valida tente sem pontos ou traços
+                        ex: xxxxxxxxxxx
+                      </span>
+                      <input id="cpf" name="cpf" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="11" pattern="[0-9]+$" OnKeyPress="formatar('##/###.###', this)">
                     </div>
                   </div>                  
 
                   <!-- Search input-->
                   <div class="form-group">
-                    <label class="col-md-2 control-label" for="crp">CRP (Conselho Regional de Psicologia)<h11>*</h11></label>
+                    <label class="col-md-2 control-label" for="Crp">CRP (Conselho Regional de Psicologia)<h11>*</h11></label>
                     <div class="col-md-2">
-                      <input id="crp" name="crp" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="11" pattern="[0-9]+$" OnKeyPress="formatar('###.###.###-##', this)">
+                      <span id='erro-crp'>
+                        *Parece que o CRP que você digitou não é valida tente sem pontos ou traços
+                        ex: xxxxxxx
+                      </span>
+                      <input id="crp" name="crp" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="8" pattern="[0-9]+$" OnKeyPress="formatar('######-##', this)">
                     </div>
                   </div>    
 
@@ -131,68 +150,92 @@
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="e-Psi">Link e-Psi<h11>*</h11></label>
                     <div class="col-md-2">
-                      <input id="link" name="Link" placeholder="" class="form-control input-md" required="" type="text">
+                      <span id='erro-link'>
+                        *Parece que o Link e-Psi está incorreto
+                      </span>
+                      <input id="link" name="Link" placeholder="" class="form-control input-md" required="" type="search" maxlength="15">
                     </div>
                   </div>
-                  
-              <div class="form-group">
-                  <label class="col-md-2 control-label" for="Rua">CEP<h11>*</h11></label> 
-                  <div class="col-md-2">
-                    <input id="cep" name="cep" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="11" pattern="[0-9]+$" OnKeyPress="formatar('#####-###', this)">
-                  </div>
-              </div>
 
-            
-              
-
-                <div class="form-group">
-                  <label class="col-md-2 control-label" for="Rua">Cidade<h11>*</h11></label> 
-                  <div class="col-md-3">
-                    <input id="cidade" name="cidade"placeholder="" class="form-control input-md" required="" type="text">
-                  </div>
-              </div>
-              
-              <div class="form-group">
-                <label class="col-md-2 control-label" for="Bairro">Bairro<h11>*</h11></label> 
-                <div class="col-md-2">
-                  <input id="boirro" name="bairro" placeholder="" class="form-control input-md" required="" type="text">
-                </div>
-            </div>
-
- 
-              <div class="form-group">
-                      <label class="col-md-2 control-label" for="Rua">Rua<h11>*</h11></label> 
-                      <div class="col-md-6">
-                        <input id="rua" name="rua" placeholder="" class="form-control input-md" required="" type="text">
-                      </div>
-                  </div>
                   <div class="form-group">
-                    <label class="col-md-2 control-label" for="numero">Numero <h11>*</h11></label>
+                    <label class="col-md-2 control-label" for="Cep">CEP<h11>*</h11></label> 
                     <div class="col-md-2">
-                      <input id="numero" name="numero" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="11" pattern="[0-9]+$" OnKeyPress="formatar('###.###.###-##', this)">
+                      <span id='erro-cep'>
+                        *Parece que o CEP está incorreto tente sem pontos e traços
+                        ex: xxxxxxxx
+                      </span>
+                      <input id="cep" name="cep" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="8" pattern="[0-9]+$" OnKeyPress="formatar('######-###', this)">
                     </div>
-                  </div>        
-           
-              <div class="form-group">
-                  <label class="col-md-2 control-label" for="Completo">Complemento</label> 
+                </div>
+  
+              
+                
+  
+                  <div class="form-group">
+                    <label class="col-md-2 control-label" for="Cidade">Cidade<h11>*</h11></label> 
+                    <div class="col-md-3">
+                      <span id='erro-cidade'>
+                        *Parece que a cidade está incorreta
+                      </span>
+                      <input id="cidade" name="cidade"placeholder="" class="form-control input-md" required="" type="text">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="col-md-2 control-label" for="Bairro">Bairro<h11>*</h11></label> 
                   <div class="col-md-2">
-                    <input id="complemento" name="complemento" placeholder="" class="form-control input-md" type="text">
+                    <span id='erro-bairro'>
+                      *Parece que o bairro está incorreto
+                    </span>
+                    <input id="bairro" name="bairro" placeholder="" class="form-control input-md" required="" type="text">
                   </div>
               </div>
-
-
-              <div class="form-group">
-                <label class="col-md-2 control-label" for="Completo">Instituição de formção<h11>*</h11></label> 
-                <div class="col-md-6">
-                  <input id="InstituiçãoDeFormção" name="InstituiçãoDeFormção" placeholder="" class="form-control input-md" type="text">
+  
+   
+                <div class="form-group">
+                        <label class="col-md-2 control-label" for="Rua">Rua<h11>*</h11></label> 
+                        <div class="col-md-6">
+                          <span id='erro-rua'>
+                            *Parece que a rua está incorreta
+                          </span>
+                          <input id="rua" name="rua" placeholder="" class="form-control input-md" required="" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-md-2 control-label" for="numero">Numero <h11>*</h11></label>
+                      <div class="col-md-2">
+                        <span id='erro-numeroclinica'>
+                          *Parece que o número está incorreto
+                        </span>
+                        <input id="numeroclinica" name="numero" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="4" pattern="[0-9]+$" OnKeyPress="formatar('####', this)">
+                      </div>
+                    </div>        
+             
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="Completo">Complemento</label> 
+                    <div class="col-md-2">
+                      <input id="complemento" name="complemento" placeholder="" class="form-control input-md" type="text">
+                    </div>
                 </div>
-            </div>
-
+  
+  
+                <div class="form-group">
+                  <label class="col-md-2 control-label" for="Completo">Instituição de formção<h11>*</h11></label> 
+                  <div class="col-md-6">
+                    <span id='erro-instituicao'>
+                      *Parece que a instituição de formação o está incorreta
+                    </span>
+                    <input id="instituiçãoDeFormção" name="instituiçãoDeFormção" placeholder="" class="form-control input-md" type="text">
+                  </div>
+              </div>
         
                   <!-- Select Basic -->
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="anoDeFormacao">Ano de formação <h11>*</h11></label>
                     <div class="col-md-2">
+                      <span id='erro-ano'>
+                        *Parece que o ano de formação está incorreto
+                      </span>
                       <input id="anoDeFormacao" name="anoDeFormacao" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="11" pattern="[0-9]+$" OnKeyPress="formatar('###.###.###-##', this)">
                     </div>
                   </div>
@@ -215,20 +258,23 @@
                   </div>
 
                   <div class="form-group">
-                    <label class="col-md-2 control-label" for="Nome">Usuário <h11>*</h11></label>  
+                    <label class="col-md-2 control-label" for="Usuario">Usuário <h11>*</h11></label>  
                     <div class="col-md-2">
-                      <input id="usuario" name="Nome" placeholder="" class="form-control input-md" required="" type="text">
+                      <span id='erro-usuario'>
+                        *Parece que o usuário está incorreto
+                      </span>
+                      <input id="usuario" name="usuario" placeholder="" class="form-control input-md" required="" type="text">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label class="col-md-2 control-label" for="Nome">Senha <h11>*</h11></label>  
+                    <label class="col-md-2 control-label" for="Senha">Senha <h11>*</h11></label>  
                     <div class="col-md-2">
-                      <input id="senha" name="Nome" placeholder="" class="form-control input-md" required="" type="password">
+                      <input id="senha" name="senha" placeholder="" class="form-control input-md" required="" type="password">
                     </div>
-                    <label class="col-md-2 control-label" for="Nome">Confirmar Senha <h11>*</h11></label> 
+                    <label class="col-md-2 control-label" for="ConfSenha"">Confirmar Senha <h11>*</h11></label> 
                     <div class="col-md-2">
-                     <input id="senha" name="Nome" placeholder="" class="form-control input-md" required="" type="password">
+                     <input id="confSenha" name="confSenha" placeholder="" class="form-control input-md" required="" type="password">
                     </div>
                   </div>
 
@@ -241,7 +287,7 @@
 
                 </form>
                   <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
-                  id="btn-cadastrar">Cadastrar-se</button>
+                  id="btn-cadastrar" onclick="cadastrar()">Cadastrar-se</button>
           </div>
       </main>
 
@@ -303,60 +349,73 @@
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <script type="module" src="./scripts/estagiario.js"></script>
   <script src="js/script.js" ></script>
-
-  <script>
-    function cadastrar(){
+<script>
+  function cadastrar(){
     event.preventDefault()
     const url = "http://127.0.0.1:3333/psicologos"
     const nome =  document.getElementById('nomeCompleto').value
     const nascimento =  document.getElementById('dtnasc').value
     const telefone =  document.getElementById('telefone').value
     const email =  document.getElementById('email').value
-    const cpf =  parseInt(document.getElementById('cpf').value)
-    const crp = document.getElementById("crp").value
-    const linkEpsi = document.getElementById("link").value
-    const usuario = document.getElementById("usuario").value
-    const senha = document.getElementById("senha").value
-    const formacao =  parseInt(document.getElementById("formacao").value)
-    const endereco = document.getElementById("endereco").value
-
-      
+    const cpf =  document.getElementById('cpf').value
+    const cidade =  document.getElementById('cidade').value
+    const rua =  document.getElementById('rua').value
+    const bairro =  document.getElementById('bairro').value
+    const cep =  document.getElementById('cep').value
+    const crp =  document.getElementById('crp').value 
+    const link =  document.getElementById('link').value
+    const numero =  document.getElementById('numeroclinica').value
+    const ano =  Number(document.getElementById('anoDeFormacao').value)
+    const usuario =  document.getElementById('usuario').value
+    const complemento =  document.getElementById('complemento').value
+    const senha =  document.getElementById('senha').value
+    const instituicao =  document.getElementById('instituiçãoDeFormção').value
+  
+  
+  
     const body = {
       "nome": nome,
+      "dataNascimento": nascimento,
       "telefone": telefone,
       "email": email,
       "cpf": cpf,
-      "dataNascimento": nascimento ,
+      "cidade": cidade,
+      "cep": cep,
+      "rua": rua,
+      "bairro": bairro,
+      "numero": numero,
+      "complemento": complemento,
+      "email": email,
       "crp": crp,
-      "linkEpsi":linkEpsi,
-      "nomeUsuario":usuario,
-      "endereco": endereco,
-      "senhaUsuario":senha, 
-      "anoDeFormação": formacao 
+      "linkEpsi": link,
+      "anoDeFormacao": ano,
+      "nomeUsuario": usuario,
+      "senhaUsuario": senha,
+      "instituicaoEnsino": instituicao
+
+
     }
-    console.log(body)
+    
     fazpost(url, body)
   }
   
   function fazpost(url, body){
-  
     const req = new XMLHttpRequest()
     req.open("POST", url, true)
     req.setRequestHeader('Content-type', 'application/json')
-  
+
     req.send(JSON.stringify(body))
-  
+
     req.onload = function(){
-      console.log(this.responseText)
-  
-  
+      window.alert(this.responseText)
+
+
     }
-  
+
     return req.responseText
-  
+
   }
-  
-  </script>
- 
+
+</script>
 </body>
 </html>

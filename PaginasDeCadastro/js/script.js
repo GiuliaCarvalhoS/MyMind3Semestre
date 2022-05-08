@@ -1,15 +1,6 @@
 const novoUsuario = [] //array que armazenrara provisoriamente os dados do usuario
 
 
-
-
-
-
-
-
-
-
-
 function cadastrar(){
   
 
@@ -26,15 +17,7 @@ function cadastrar(){
   const $user = document.getElementById("user")
   const $senha = document.getElementById("senha").value
  
-
-
   
-  
-  
-  
-
-  
-    
   const dadosUsuario =
   {
     nome:$nomeCompletoValue,
@@ -103,36 +86,40 @@ $btnConfirmarSenha.addEventListener('blur',()=>{
 //verificação de usuario cadastrado
 const $user = document.getElementById("user")
 
-$user.addEventListener('blur',()=>{
+// $user.addEventListener('blur',()=>{
   
-  const inputUsuario = $user.value
-
-  console.log(inputUsuario)
-  const usuariosA = JSON.parse(localStorage.getItem("usuarios"))
-
-
-
- 
-  
-
-  const usuarioExistente = usuariosA.findIndex(({user})=> user == inputUsuario )
-  console.log(usuarioExistente)
-
-  if(usuarioExistente >= 0 || inputUsuario.length < 3){
-    $user.style.borderColor = "red" //muda a borda para vermelho
-    document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
-    document.querySelector("#erro-usuario").style.display ='flex'
-  }
-  //retorna ao normal
-  else{
-    $user.style.borderColor = "green"
-    document.getElementById('btn-cadastrar').disabled=false
-    document.querySelector("#erro-usuario").style.display ="none"
-  }
+// //   const inputUsuario = $user.value
 
   
+// //   let psicologos = {}
 
-})
+
+
+// //  fetch("http://localhost:3333/psicologos").then(response =>{
+// //     psicologos = response.json()
+// //  })
+
+// //  console.log(psicologos)
+  
+
+//   // const usuarioExistente = usuariosA.findIndex(({user})=> user == inputUsuario )
+//   // console.log(usuarioExistente)
+
+//   // if(usuarioExistente >= 0 || inputUsuario.length < 3){
+//   //   $user.style.borderColor = "red" //muda a borda para vermelho
+//   //   document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
+//   //   document.querySelector("#erro-usuario").style.display ='flex'
+//   // }
+//   // //retorna ao normal
+//   // else{
+//   //   $user.style.borderColor = "green"
+//   //   document.getElementById('btn-cadastrar').disabled=false
+//   //   document.querySelector("#erro-usuario").style.display ="none"
+//   // }
+
+  
+
+// })
 
 // verificação do campo nome 
 
@@ -178,7 +165,7 @@ $data.addEventListener('blur',()=>{
   
 
   
-  if(inputUsuario.length <= 7){
+  if(inputUsuario.length < 6){
     $data.style.borderColor = "red" //muda a borda para vermelho
     document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
     document.querySelector("#erro-data").style.display ='flex'
@@ -208,7 +195,7 @@ $numeroDeTelefone.addEventListener('blur',()=>{
   
 
   
-  if(inputUsuario.toString().length <= 10){
+  if(inputUsuario.toString().length < 11){
     $numeroDeTelefone.style.borderColor = "red" //muda a borda para vermelho
     document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
     document.querySelector("#erro-numero").style.display ='flex'
@@ -283,7 +270,7 @@ $cpf.addEventListener('blur',()=>{
   
 
   
-  if(inputUsuario.length <= 10){
+  if(inputUsuario.length < 10){
     $cpf.style.borderColor = "red" //muda a borda para vermelho
     document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
     document.querySelector("#erro-cpf").style.display ='flex'
@@ -298,3 +285,253 @@ $cpf.addEventListener('blur',()=>{
   
 
 })
+const $crp = document.getElementById("crp")
+
+$crp.addEventListener('blur',()=>{
+  
+  const inputUsuario = $crp.value
+
+
+  
+  if(inputUsuario.length < 7){
+    $crp.style.borderColor = "red" //muda a borda para vermelho
+    document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
+    document.querySelector("#erro-crp").style.display ='flex'
+  }
+  //retorna ao normal
+  else{
+    $crp.style.borderColor = "green"
+    document.getElementById('btn-cadastrar').disabled=false
+    document.querySelector("#erro-crp").style.display ='none'
+  }
+
+  
+
+})
+const $link = document.getElementById("link")
+
+$link.addEventListener('blur',()=>{
+  
+  const inputUsuario = $link.value
+
+
+  
+
+  
+  if(inputUsuario.length < 10){
+    $link .style.borderColor = "red" //muda a borda para vermelho
+    document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
+    document.querySelector("#erro-link").style.display ='flex'
+  }
+  //retorna ao normal
+  else{
+    $link.style.borderColor = "green"
+    document.getElementById('btn-cadastrar').disabled=false
+    document.querySelector("#erro-link").style.display ='none'
+  }
+
+  
+
+})
+const $cep = document.getElementById("cep")
+
+$cep.addEventListener('blur',()=>{
+  
+  const inputUsuario = $cep.value
+
+
+  
+
+  
+  if(inputUsuario.length < 8){
+    $cep.style.borderColor = "red" //muda a borda para vermelho
+    document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
+    document.querySelector("#erro-cep").style.display ='flex'
+  }
+  //retorna ao normal
+  else{
+    $cep.style.borderColor = "green"
+    document.getElementById('btn-cadastrar').disabled=false
+    document.querySelector("#erro-cep").style.display ='none'
+  }
+
+  
+
+})
+const $cidade = document.getElementById("cidade")
+
+$cidade.addEventListener('blur',()=>{
+  
+  const inputUsuario = $cidade.value
+
+
+  
+
+  
+  if(inputUsuario.length < 5){
+    $cidade.style.borderColor = "red" //muda a borda para vermelho
+    document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
+    document.querySelector("#erro-cidade").style.display ='flex'
+  }
+  //retorna ao normal
+  else{
+    $cidade.style.borderColor = "green"
+    document.getElementById('btn-cadastrar').disabled=false
+    document.querySelector("#erro-cidade").style.display ='none'
+  }
+
+  
+
+})
+const $bairro = document.getElementById("bairro")
+
+$bairro.addEventListener('blur',()=>{
+  
+  const inputUsuario = $bairro.value
+
+
+  
+
+  
+  if(inputUsuario.length < 5){
+    $bairro.style.borderColor = "red" //muda a borda para vermelho
+    document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
+    document.querySelector("#erro-bairro").style.display ='flex'
+  }
+  //retorna ao normal
+  else{
+    $bairro.style.borderColor = "green"
+    document.getElementById('btn-cadastrar').disabled=false
+    document.querySelector("#erro-bairro").style.display ='none'
+  }
+
+  
+
+})
+const $rua = document.getElementById("rua")
+
+$rua.addEventListener('blur',()=>{
+  
+  const inputUsuario = $rua.value
+
+
+  
+
+  
+  if(inputUsuario.length < 5){
+    $rua.style.borderColor = "red" //muda a borda para vermelho
+    document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
+    document.querySelector("#erro-rua").style.display ='flex'
+  }
+  //retorna ao normal
+  else{
+    $rua.style.borderColor = "green"
+    document.getElementById('btn-cadastrar').disabled=false
+    document.querySelector("#erro-rua").style.display ='none'
+  }
+
+  
+
+})
+const $instituiçãoDeFormção = document.getElementById("instituiçãoDeFormção")
+
+$instituiçãoDeFormção.addEventListener('blur',()=>{
+  
+  const inputUsuario = $instituiçãoDeFormção.value
+
+
+  
+
+  
+  if(inputUsuario.length < 5){
+    $instituiçãoDeFormção.style.borderColor = "red" //muda a borda para vermelho
+    document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
+    document.querySelector("#erro-instituicao").style.display ='flex'
+  }
+  //retorna ao normal
+  else{
+    $instituiçãoDeFormção.style.borderColor = "green"
+    document.getElementById('btn-cadastrar').disabled=false
+    document.querySelector("#erro-instituicao").style.display ='none'
+  }
+
+  
+
+})
+const $anoDeFormacao = document.getElementById("anoDeFormacao")
+
+$anoDeFormacao.addEventListener('blur',()=>{
+  
+  const inputUsuario = $anoDeFormacao.value
+
+
+  
+
+  
+  if(inputUsuario.length < 4){
+    $anoDeFormacao.style.borderColor = "red" //muda a borda para vermelho
+    document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
+    document.querySelector("#erro-ano").style.display ='flex'
+  }
+  //retorna ao normal
+  else{
+    $anoDeFormacao.style.borderColor = "green"
+    document.getElementById('btn-cadastrar').disabled=false
+    document.querySelector("#erro-ano").style.display ='none'
+  }
+
+  
+
+})
+const $usuario = document.getElementById("usuario")
+
+$usuario.addEventListener('blur',()=>{
+  
+  const inputUsuario = $usuario.value
+
+
+  
+
+  
+  if(inputUsuario.length < 5){
+    $usuario.style.borderColor = "red" //muda a borda para vermelho
+    document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
+    document.querySelector("#erro-usuario").style.display ='flex'
+  }
+  //retorna ao normal
+  else{
+    $usuario.style.borderColor = "green"
+    document.getElementById('btn-cadastrar').disabled=false
+    document.querySelector("#erro-usuario").style.display ='none'
+  }
+
+  
+
+})
+const $numeroClinica = document.getElementById("numeroclinica")
+
+$numeroClinica.addEventListener('blur',()=>{
+  
+  const inputUsuario = $numeroClinica.value
+
+
+  
+
+  
+  if(inputUsuario.length == 0){
+    $numeroClinica.style.borderColor = "red" //muda a borda para vermelho
+    document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
+    document.querySelector("#erro-numeroclinica").style.display ='flex'
+  }
+  //retorna ao normal
+  else{
+    $numeroClinica.style.borderColor = "green"
+    document.getElementById('btn-cadastrar').disabled=false
+    document.querySelector("#erro-numeroclinica").style.display ='none'
+  }
+
+  
+
+})
+
+

@@ -19,7 +19,8 @@ exports.up = function(knex) {
     table.string('telefone', 14).notNullable()
     table.string('crp',15).notNullable()
     table.string('linkEpsi',15) .notNullable()
-    table.integer('anoDeFormação',4).notNullable()
+    table.integer('anoDeFormacao',4).notNullable()
+    table.string('instituicaoEnsino', 50).notNullable()
     table.string('nomeUsuario', 40).unique().notNullable();
     table.string('senhaUsuario', 40).notNullable()
 

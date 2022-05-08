@@ -43,7 +43,8 @@ module.exports = {
         crp, 
         email,
         linkEpsi,
-        anoDeFormação, 
+        anoDeFormacao, 
+        instituicaoEnsino,
         nomeUsuario, 
         senhaUsuario,
         dataNascimento,
@@ -70,7 +71,8 @@ module.exports = {
           telefone,
           crp,
           linkEpsi,
-          anoDeFormação,
+          anoDeFormacao,
+          instituicaoEnsino,
           nomeUsuario,
           senhaUsuario
          })
@@ -112,12 +114,16 @@ module.exports = {
       
       
       await knex("psicologo").update({
-        nome: alteracaoPsicologo.nome,
-        endereco: alteracaoPsicologo.endereco, // Conversar com a professora
-        email: alteracaoPsicologo.email,
-        telefone: alteracaoPsicologo.telefone,
-        nomeUsuario: alteracaoPsicologo.nomeUsuario,
-        senhaUsuario: alteracaoPsicologo.senhaUsuario
+          nome: alteracaoPsicologo.nome, 
+          email: alteracaoPsicologo.email,
+          telefone: alteracaoPsicologo.telefone,
+          senhaUsuario: alteracaoPsicologo.senhaUsuario,
+          cidade: alteracaoPsicologo.cidade,
+          cep: alteracaoPsicologo.cep,
+          rua: alteracaoPsicologo.rua,
+          bairro: alteracaoPsicologo.bairro,
+          numero: alteracaoPsicologo.numero,
+          complemento: alteracaoPsicologo.complemento,
       }).where({nomeUsuario})
       
       return response.send(`${nomeUsuario}, Atualizado com sucesso`)
