@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Material Design -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-green.min.css" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>    
+  
+  <link rel="stylesheet" href="css/Estilo.Css">
+  
+  <title>MyMind</title>
+</head>
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">MyMind</span>
+          <div class="mdl-layout-spacer"></div>
+          <div class="content-menu-item">
+            <nav class="mdl-navigation">
+              <a href="../home.html" class="mdl-navigation__link">Home</a>
+              <a href="#" class="mdl-navigation__link" id="entrar">Login</a>
+              <a href="../menucadastro.html" class="mdl-navigation__link" id="aqui">Cadastrar</a>
+              <a href="../sobre.html" class="mdl-navigation__link">Quem somos</a> 
+            </nav>
+          </div>   
+      </div>
+    </header>
+    <!--MEXER LINKS E-->
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">MyMind</span>
+        <nav class="mdl-navigation">
+          <a href="../home.html" class="mdl-navigation__link">home</a>
+          <a href="#" class="mdl-navigation__link" id="entrar">Login</a>
+          <a href="../menucadastro.html" class="mdl-navigation__link">Cadastrar</a>
+          <a href="../sobre.html" class="mdl-navigation__link">Quem somos</a> 
+        </nav>
+    </div>
+      <main >
+        <div class = "container-fluid">
+            <form class="form-horizontal" >
+              <fieldset>
+                <div class="panel panel-primary">
+                  <div class="panel-heading" id="titulo">Apagar Cadastro</div>
+                  <div class="panel-body">
+              <div class="form-group">
+              <div class="col-md-11 control-label">
+                  <p class="help-block"><h11>*</h11> Campo Obrigatório </p>
+              </div>
+              <div class="form-group">
+                <label class="col-md-5 control-label" for="Usuario" id="tituloapagar">Digite seu usuário e senha para deletar a sua conta</label>  
+              </div>
+              
+              <div class="form-group">
+                <label class="col-md-2 control-label" for="Usuario">Usuário <h11>*</h11></label>  
+                <div class="col-md-2">
+                  <span id='erro-usuario'>
+                    *Parece que há algo errado com o usuário
+                  </span>
+                  <input id="usuario" name="usuario" placeholder="" class="form-control input-md" required="" type="text">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-2 control-label" for="Senha">Senha <h11>*</h11></label>  
+                <div class="col-md-2">
+                  <span id='erro-senha'>
+                    *Parece que há algo errado com a senha
+                  </span>
+                  <input id="senha" name="senha" placeholder="" class="form-control input-md" required="" type="password">
+                </div>
+
+            </form><br>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+              id="btn-deletar">Deletar</button>
+              </div>
+      </main>
+
+      <footer class="mdl-mini-footer mdl-layout--fixed-footer">
+        <div class="mdl-mini-footer--left-section">
+          <div class="mdl-logo">MyMind</div>
+          <ul class="mdl-mini-footer--link-list">
+          </ul>
+        </div>
+      </footer>
+    </div>
+  
+
+    <div id="login">
+      <div class="centralizar" >
+        <div class="container-login">
+          <span class="txtlogin">Login</span>
+          <img src="../../../assets/close.png" alt="close" class="close-button" id="close-button">
+        </div>
+      
+        <form action="POST">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="sample1">
+            <label class="mdl-textfield__label" for="sample1">Usuario</label>
+          </div>
+        </form>
+        <span class="txtlogin">Senha:</span>
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="password" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+              <label class="mdl-textfield__label" for="sample2">Senha</label>
+              <span class="mdl-textfield__error">Opa, senha inválida, Tente Novamento!</span>
+          </div>
+        </form>
+      
+          <label class="container" id="txt-lembrarSenha">Lembrar minha conta
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+          
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="btn-entrar">
+              Acessar
+          </button>
+  
+          <a href="#">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="btn-cadastrar">
+              Cadastrar-se
+          </button>
+          </a>
+
+          <a href="./esquecer.html">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="btn-esquecer">
+              Esqueceu sua senha?
+            </button>
+          </a>
+      
+      </div>
+    </div>
+
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script type="module" src="./scripts/estagiario.js"></script>
+  <script src="js/script.js"></script>
+<script>

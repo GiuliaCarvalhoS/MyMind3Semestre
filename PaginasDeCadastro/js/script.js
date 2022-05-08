@@ -1,59 +1,3 @@
-const novoUsuario = [] //array que armazenrara provisoriamente os dados do usuario
-
-
-function cadastrar(){
-  
-
-  //dados
-  const $nomeCompletoValue = document.getElementById("nomeCompleto").value
-  const $dataNascimentoValue = document.getElementById("dtnasc").value
-  const $telefoneValue = document.getElementById("telefone").value
-  const $emailValue = document.getElementById("email").value
-  const $cpfValue = document.getElementById("cpf").value
-  const $tempo = document.getElementById("tempo")
-  const $tempoValue = $tempo.options[$tempo.selectedIndex].text
-  const $comoNosConheceu = document.getElementById("comoNosConheceu")
-  const $comoNosConheceuValue = $comoNosConheceu.options[$comoNosConheceu.selectedIndex].text
-  const $user = document.getElementById("user")
-  const $senha = document.getElementById("senha").value
- 
-  
-  const dadosUsuario =
-  {
-    nome:$nomeCompletoValue,
-    data:$dataNascimentoValue,
-    telefone:$telefoneValue,
-    email: $emailValue,
-    cpf: $cpfValue,
-    acompanhamento_psicológico: $tempoValue,
-    ComoNosConheceu: $comoNosConheceuValue,
-    user: $user.value,
-    password: $senha, 
-    loged:false
-
-  }
- 
-
-  novoUsuario.push(dadosUsuario)
-
-  const usuariosA = JSON.parse(localStorage.getItem("usuarios")) ||[]
-  
-
-  const usuarios = [...usuariosA, ...novoUsuario]
-    
-    
-  
-    window.localStorage.setItem("usuarios",JSON.stringify(usuarios))
-
-  
-  
-  
- 
-
-
-
-  
-}
 
 //botão cadastrar
 const $buttonCadastrar = document.getElementById('btn-cadastrar')
@@ -86,40 +30,6 @@ $btnConfirmarSenha.addEventListener('blur',()=>{
 //verificação de usuario cadastrado
 const $user = document.getElementById("user")
 
-// $user.addEventListener('blur',()=>{
-  
-// //   const inputUsuario = $user.value
-
-  
-// //   let psicologos = {}
-
-
-
-// //  fetch("http://localhost:3333/psicologos").then(response =>{
-// //     psicologos = response.json()
-// //  })
-
-// //  console.log(psicologos)
-  
-
-//   // const usuarioExistente = usuariosA.findIndex(({user})=> user == inputUsuario )
-//   // console.log(usuarioExistente)
-
-//   // if(usuarioExistente >= 0 || inputUsuario.length < 3){
-//   //   $user.style.borderColor = "red" //muda a borda para vermelho
-//   //   document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
-//   //   document.querySelector("#erro-usuario").style.display ='flex'
-//   // }
-//   // //retorna ao normal
-//   // else{
-//   //   $user.style.borderColor = "green"
-//   //   document.getElementById('btn-cadastrar').disabled=false
-//   //   document.querySelector("#erro-usuario").style.display ="none"
-//   // }
-
-  
-
-// })
 
 // verificação do campo nome 
 
