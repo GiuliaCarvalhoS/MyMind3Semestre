@@ -52,9 +52,9 @@ module.exports = {
         
       } = request.body
 
-      psicologos.indexOf(psicologo => psicologo.nomeUsuario || psicologo.cpf)
+      const psi = psicologos.findIndex( psicologo => psicologo.cpf === cpf || psicologo.nomeUsuario === nomeUsuario)
       
-      if(psicologos > 0){
+      if(psi < 0){
 
         await knex('psicologo').insert({
           id:uuidv4(),
@@ -85,14 +85,7 @@ module.exports = {
         return response.status(201).send("Usuario ja cadastrado")
       }
 
-        
-
-
-
-         
- 
- 
- 
+      
  
  
      }catch (error){

@@ -395,6 +395,7 @@
 
 
     }
+    console.log(body)
     
     fazpost(url, body)
   }
@@ -408,6 +409,7 @@
 
     req.onload = function(){
       window.alert(this.responseText)
+      console.log(this.responseText)
 
 
     }

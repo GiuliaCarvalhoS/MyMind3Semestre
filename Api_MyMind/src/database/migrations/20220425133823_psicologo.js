@@ -6,7 +6,7 @@ exports.up = function(knex) {
   return knex.schema.createTable("psicologo", table =>{
     
     table.string("id",255).primary()
-    table.bigint('cpf').unique();
+    table.string('cpf', 15).unique();
     table.string('nome', 40).notNullable()
     table.string('dataNascimento', 11).notNullable()
     table.string('cidade', 40).notNullable()
