@@ -106,6 +106,7 @@ module.exports = {
       const {nomeUsuario} = request.params
       
       
+      
       await knex("psicologo").update({
           nome: alteracaoPsicologo.nome, 
           email: alteracaoPsicologo.email,
@@ -126,15 +127,28 @@ module.exports = {
     }
    },
 
+
+
    async delete(request,response, next){
 
     try {
 
       const {nomeUsuario}= request.params
+      const {senhaUsuario} = request.body
 
-      await knex("psicologo").where({nomeUsuario}).del()
+      const psicologos = await  knex("psicologo")
+      
+      const psi = psicologos.findIndex( psicologo => psicologo.nomeUsuario === nomeUsuario && psicologo.senhaUsuario === senhaUsuario)
+      
+      if(psi >= 0){
+        await knex("psicologo").where({nomeUsuario}).del()
 
-      return response.send(`${nomeUsuario}, deletado com sucesso`)
+        return response.send(`${nomeUsuario}, deletado com sucesso`)
+      }else {
+        return response.send("Houve algum problema")
+      }
+
+      
       
     } catch (error) {
       next(error)

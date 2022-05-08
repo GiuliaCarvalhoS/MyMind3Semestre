@@ -64,7 +64,7 @@
                   <span id='erro-usuario'>
                     *Parece que há algo errado com o usuário
                   </span>
-                  <input id="usuario" name="usuario" placeholder="" class="form-control input-md" required="" type="text">
+                  <input id="usuario1" name="usuario" placeholder="" class="form-control input-md" required="" type="text">
                 </div>
               </div>
 
@@ -74,12 +74,12 @@
                   <span id='erro-senha'>
                     *Parece que há algo errado com a senha
                   </span>
-                  <input id="senha" name="senha" placeholder="" class="form-control input-md" required="" type="password">
+                  <input id="senhaUsuario" name="senha" placeholder="" class="form-control input-md" required="" type="password">
                 </div>
 
             </form><br>
               <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
-              id="btn-deletar">Deletar</button>
+              id="btn-deletar" onclick="cadastrar(event)">Deletar</button>
               </div>
       </main>
 
@@ -93,7 +93,7 @@
     </div>
   
 
-    <div id="login">
+    <!-- <div id="login">
       <div class="centralizar" >
         <div class="container-login">
           <span class="txtlogin">Login</span>
@@ -137,7 +137,51 @@
           </a>
       
       </div>
-    </div>
+    </div> -->
+
+
+
+
+
+
+    <script>
+
+      function cadastrar(event){
+      
+        event.preventDefault()
+        debugger
+        const nomeUsuario =  document.getElementById('usuario1').value
+        const senhaUsuario = document.getElementById('senhaUsuario').value
+        
+        const url = `http://127.0.0.1:3333/psicologos/${nomeUsuario}`
+
+        const body = {
+          senhaUsuario
+        }
+      
+        fazpost(url, body)
+
+      }
+    
+      function fazpost(url, body){
+    
+        const req = new XMLHttpRequest()
+        req.open("DELETE", url, true)
+        req.setRequestHeader('Content-type', 'application/json')
+    
+        req.send(JSON.stringify(body))
+    
+       
+        req.onload = function(){
+          window.alert(this.responseText)
+      
+      
+        }
+      
+        return req.responseText
+    
+      }                                                 
+    </script>
 
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <script type="module" src="./scripts/estagiario.js"></script>
