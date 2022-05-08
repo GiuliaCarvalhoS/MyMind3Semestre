@@ -23,6 +23,11 @@ module.exports = {
    async create(request, response, next){
  
      try{
+
+
+      const psicologos = await  knex("psicologo")
+
+      
  
        const {
         id,
@@ -45,7 +50,12 @@ module.exports = {
 
         
       } = request.body
-         await knex('psicologo').insert({
+
+      psicologos.indexOf(psicologo => psicologo.nomeUsuario || psicologo.cpf)
+      
+      if(psicologos > 0){
+
+        await knex('psicologo').insert({
           id:uuidv4(),
           cpf,
           nome,
@@ -66,6 +76,18 @@ module.exports = {
          })
  
          return response.status(201).send("Usuario cadastrado com sucesso")
+
+      }
+
+      else{
+        return response.status(201).send("Usuario ja cadastrado")
+      }
+
+        
+
+
+
+         
  
  
  
