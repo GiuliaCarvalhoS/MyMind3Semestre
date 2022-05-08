@@ -287,7 +287,7 @@
 
                 </form>
                   <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
-                  id="btn-cadastrar" onclick="Cadastrar()">Cadastrar-se</button>
+                  id="btn-cadastrar" onclick="cadastrar()">Cadastrar-se</button>
           </div>
       </main>
 
@@ -353,11 +353,25 @@
   function cadastrar(){
     event.preventDefault()
     const url = "http://127.0.0.1:3333/psicologos"
-    const nome =  document.getElementById('nome').value
-    const nascimento =  document.getElementById('nascimento').value
+    const nome =  document.getElementById('nomeCompleto').value
+    const nascimento =  document.getElementById('dtnasc').value
     const telefone =  document.getElementById('telefone').value
     const email =  document.getElementById('email').value
     const cpf =  document.getElementById('cpf').value
+    const cidade =  document.getElementById('cidade').value
+    const rua =  document.getElementById('rua').value
+    const bairro =  document.getElementById('bairro').value
+    const cep =  document.getElementById('cep').value
+    const crp =  document.getElementById('crp').value 
+    const link =  document.getElementById('link').value
+    const numero =  document.getElementById('numeroclinica').value
+    const ano =  Number(document.getElementById('anoDeFormacao').value)
+    const usuario =  document.getElementById('usuario').value
+    const complemento =  document.getElementById('complemento').value
+    const senha =  document.getElementById('senha').value
+    const instituicao =  document.getElementById('instituiçãoDeFormção').value
+  
+  
   
     const body = {
       "nome": nome,
@@ -374,13 +388,14 @@
       "email": email,
       "crp": crp,
       "linkEpsi": link,
-      "anoDeFormação": ano,
+      "anoDeFormacao": ano,
       "nomeUsuario": usuario,
-      "senhaUsuario": senha
+      "senhaUsuario": senha,
+      "instituicaoEnsino": instituicao
 
 
     }
-  
+    
     fazpost(url, body)
   }
   
@@ -392,7 +407,7 @@
     req.send(JSON.stringify(body))
 
     req.onload = function(){
-      console.log(this.responseText)
+      window.alert(this.responseText)
 
 
     }
@@ -400,6 +415,7 @@
     return req.responseText
 
   }
+
 </script>
 </body>
 </html>

@@ -269,28 +269,89 @@
     <script>
 
       function cadastrar(){
-      console.log("oi")
+      
       event.preventDefault()
-      const nome =  document.getElementById('nome').value ? "" : null
-      const telefone =  document.getElementById('telefone').value ? "" : null
-      const email =  document.getElementById('email').value ? "" : null
-      const cpf =  parseInt(document.getElementById('cpf').value) ? "" : null
-      const nomeUsuario =  document.getElementById('usuario').value ? "" : null
-      const senhaUsuario =  document.getElementById('senha').value ? "" : null
-      const url = `http://127.0.0.1:3333/psicologos/${cpf}`
+      debugger
+      let nome =  document.getElementById('nome').value
+      let telefone =  document.getElementById('telefone').value
+      let email =  document.getElementById('email').value 
+      let cidade = document.getElementById("cidade").value
+      let numero = document.getElementById("numeroclinica").value
+      let bairro = document.getElementById("bairro").value
+      let rua = document.getElementById("rua").value
+      let cep = document.getElementById("cep").value
+      let complemento = document.getElementById("complemento").value
+      let nomeUsuario =  document.getElementById('usuario').value
+      let senhaUsuario =  document.getElementById('senha').value
+      let url = `http://127.0.0.1:3333/psicologos/${nomeUsuario}`
+      
+
+
+
+      // verificações para envio das dalterações
+      if (nome == ""){
+        nome = undefined
+      }
+      
+      if (telefone == ""){
+        telefone = undefined
+      }
+      
+      if (email == ""){
+        email = undefined
+      }
+      
+      if (telefone == ""){
+        telefone = undefined
+      }
+      
+      if (senhaUsuario == ""){
+        senhaUsuario = undefined
+      }
+      
+      if (numero == ""){
+        numero = undefined
+      }
+      
+      if (bairro == ""){
+        bairro = undefined
+      }
+      
+      if (rua == ""){
+        rua = undefined
+      }
+
+      if (cep == ""){
+        cep = undefined
+      }
+
+      if (complemento == ""){
+        complemento = undefined
+      }
+      if (cidade == ""){
+        cidade = undefined
+      }
 
       
       
+      
+      
+      //Put
 
       const body = {
-        nome,
-        telefone,
-        email,
-        nomeUsuario,
-        senhaUsuario
+        "nome": nome,
+        "email": email,
+        "telefone": telefone,
+        "senhaUsuario": senhaUsuario,
+        "cidade":cidade,
+        "cep":cep,
+        "rua":rua,
+        "bairro":bairro,
+        "numero": numero,
+        "complemento":complemento
         
       }
-        
+      console.log(body)
 
   
    
@@ -308,7 +369,7 @@
       req.send(JSON.stringify(body))
     
       req.onload = function(){
-        console.log(this.responseText)
+        window.alert(this.responseText)
     
     
       }

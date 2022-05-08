@@ -1,6 +1,9 @@
 function habilitarTelefone() {
     document.getElementById("telefone").disabled = false;
 }
+function habilitarNome() {
+  document.getElementById("nome").disabled = false;
+}
 function habilitarEmail() {
     document.getElementById("email").disabled = false;
 }
