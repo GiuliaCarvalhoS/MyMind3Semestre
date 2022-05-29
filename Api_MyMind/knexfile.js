@@ -12,7 +12,7 @@ module.exports = {
       port : 3307,
       user : 'root',
       password : 'root',
-      database : 'mymind'
+      database : 'mymindteste'
     },
     migrations: {
       tableName: 'knex_migrations',
