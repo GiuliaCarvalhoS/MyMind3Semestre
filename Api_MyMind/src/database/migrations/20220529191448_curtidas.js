@@ -3,10 +3,13 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {return knex.schema.createTable("curtidas", table =>{
-    table.integer("curtidas",4).unsigned().index().references("id").inTable("curtidas")
-});
+   
+    table.string("curtidas", 255).references('id').on('publicacao').onDelete('CASCADE')
+})};
 
-}/**
+
+
+/**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
