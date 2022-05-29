@@ -1,6 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 
+const middleWares = require('./middlewares/middlewares')
+
 const routes = require('./routes')
 
 const app = express()
@@ -12,18 +14,13 @@ app.use(routes)
 
 
 //Not Found
-app.use((req, res, next)=>{
-  const error = new Error('Not found') 
-  error.status = 404
-
-  next(error)
-})
+app.use(middleWares.notFound)
 
 // catch all
-app.use((error, req, res, next)=>{
-  res.status(error.status || 500)
-  res.json({error: error.message})
-})
+app.use(middleWares.catchAll)
+
+//token
+
 
 
 

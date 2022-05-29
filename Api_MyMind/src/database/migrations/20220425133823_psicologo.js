@@ -22,7 +22,7 @@ exports.up = function(knex) {
     table.integer('anoDeFormacao',4).notNullable()
     table.string('instituicaoEnsino', 50).notNullable()
     table.string('nomeUsuario', 40).unique().notNullable();
-    table.string('senhaUsuario', 40).notNullable()
+    table.string('senhaUsuario', 250).notNullable()
 
     
   

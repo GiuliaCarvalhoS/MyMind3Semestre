@@ -1,6 +1,7 @@
 
 
 const knex = require('../database')
+const bcrypt= require('bcryptjs')
 
 const {v4: uuidv4} = require('uuid')
 
@@ -25,12 +26,15 @@ module.exports = {
      try{
 
 
-      const psicologos = await  knex("psicologo")
+      try {
+        var psicologos = await  knex("psicologo")
+      } catch (error) {
+        var psicologos = []
+      }
 
       
  
        const {
-        id,
         cpf,
         nome,
         cidade,
@@ -53,8 +57,13 @@ module.exports = {
       } = request.body
 
       const psi = psicologos.findIndex( psicologo => psicologo.cpf === cpf || psicologo.nomeUsuario === nomeUsuario)
+
+
+       
       
       if(psi < 0){
+        
+        const hash = await bcrypt.hash(senhaUsuario, 10)
 
         await knex('psicologo').insert({
           id:uuidv4(),
@@ -74,7 +83,7 @@ module.exports = {
           anoDeFormacao,
           instituicaoEnsino,
           nomeUsuario,
-          senhaUsuario
+          senhaUsuario:hash,
          })
  
          return response.status(201).send("Usuario cadastrado com sucesso")
@@ -136,16 +145,26 @@ module.exports = {
       const {nomeUsuario}= request.params
       const {senhaUsuario} = request.body
 
-      const psicologos = await  knex("psicologo")
+      const psicologos = await  knex("psicologo") //psicologos cadastrados
       
-      const psi = psicologos.findIndex( psicologo => psicologo.nomeUsuario === nomeUsuario && psicologo.senhaUsuario === senhaUsuario)
-      
-      if(psi >= 0){
+      // const psi = psicologos.findIndex( psicologo => psicologo.nomeUsuario === nomeUsuario && psicologo.senhaUsuario === senhaUsuario)
+
+      const user = psicologos.find(psicologo => psicologo.nomeUsuario === nomeUsuario) //encontra o usuario especifico
+
+
+      //Verifica se as senhas batem
+      if(!await bcrypt.compare(senhaUsuario,user.senhaUsuario)){
+
+        return response.send("Houve algum problema")
+
+
+        
+      }else {
+        
         await knex("psicologo").where({nomeUsuario}).del()
 
         return response.send(`${nomeUsuario}, deletado com sucesso`)
-      }else {
-        return response.send("Houve algum problema")
+        
       }
 
       
