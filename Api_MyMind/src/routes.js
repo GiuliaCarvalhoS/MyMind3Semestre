@@ -23,7 +23,7 @@ routes.post('/authenticate', authController.authenticate)
 
 
 //rota das publicações
-routes.get("/perfil",publicacaoController)
-
-
+routes.get("/feed",publicacaoController.getPublicacao)
+routes.post("/feed",publicacaoController.publicar)
 module.exports = routes 
+
