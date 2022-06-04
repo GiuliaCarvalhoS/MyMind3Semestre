@@ -11,7 +11,7 @@ const $cardPublication = cardPublication()
 
   return `
   
-  <div class="mdl-layout__content">
+  
     <main>
     
       
@@ -21,7 +21,7 @@ const $cardPublication = cardPublication()
 
   
   
-  </div>
+  
 
   `
 }

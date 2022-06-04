@@ -4,7 +4,10 @@
 
     return `
     <div class = "header-container" >
-      <h3> Aqui fica a parte da foto de perfil do usuario e a caixa para digitar o texto </h3>
+        <div class="container-conteudo" > 
+          <span class="titulo-site"> MyMind </span>
+          <span class="titulo-pagina"> Feed </span>
+        </div>
     </div>
     
 
