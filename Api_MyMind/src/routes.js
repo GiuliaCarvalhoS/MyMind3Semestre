@@ -25,5 +25,6 @@ routes.post('/authenticate', authController.authenticate)
 //rota das publicações
 routes.get("/feed",publicacaoController.getPublicacao)
 routes.post("/feed",publicacaoController.publicar)
+routes.delete('/feed/:id', publicacaoController.delete)
 module.exports = routes 
 

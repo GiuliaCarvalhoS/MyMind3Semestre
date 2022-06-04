@@ -45,6 +45,34 @@ module.exports ={
         next(error)
         
     } 
+  },
+  async delete(request,response, next){
+
+    try {
+
+      const {id}= request.params
+      
+
+      const publicacoes = await  knex("publicacao") //psicologos cadastrados
+      
+      // const psi = psicologos.findIndex( psicologo => psicologo.nomeUsuario === nomeUsuario && psicologo.senhaUsuario === senhaUsuario)
+
+      const user = publicacoes.find(publicacao => publicacao.id === id) //encontra o usuario especifico
+
+
+    
+        
+      await knex("publicacao").where({id}).del()
+
+      return response.send(`${user.titulo}, deletado com sucesso`)
+        
+    
+
+      
+      
+    } catch (error) {
+      next(error)
+    }
   }
 
 
