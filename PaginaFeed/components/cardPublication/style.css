@@ -1,11 +1,109 @@
-.testando{
+.container-conteudo-card{
   display: flex;
+  flex-direction: column;
+  width: 36rem; 
+  background-color: #F0F0F0;
+  border-radius: 12.6691px;
   justify-content: center;
-  font-size: 3rem;
-  color: aqua;
-  margin-top: 2rem;
-  width: 100vh;
-  margin-left: auto;
-  margin-right: auto;;
-  background-color: rgb(158, 100, 100);
-  }
+  align-items: center;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container-img-card{
+  background-color: black;
+  min-height: 16rem;
+  min-width: 16rem;
+  max-width: 36rem;
+  max-height: 16rem;
+  padding: 1rem;
+}
+
+.container-header-card{
+  width: 100%;
+  justify-content: left;
+  padding: 0.6rem;
+  padding-left: 1rem;
+}
+
+.usuario-card{
+  font-family: 'Podkova';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.017em;
+  margin-top: -5px;
+  color: rgba(0, 0, 0, 0.71);
+}
+
+.titulo-header{
+  font-family: 'Podkova', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.017em;
+  color: #000000;
+}
+
+.container-txt-card{
+  font-family: 'Podkova';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.017em;
+  color: #2E2E2E;
+  margin: 1rem;
+  margin-bottom: none;
+  text-align: justify;
+  justify-content: left;
+  align-items: left;
+}
+
+.container-footer-card{
+  display: flex;
+  align-items: left;
+  border: none;
+  width: 100%;
+  padding: 0.6rem;
+  padding-left: 1rem;
+  padding-top: 0;
+}
+
+.footer-img-card-heart{
+  background-image: url("../../assets/heart.png");
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: auto 100%;
+  border: none;
+  justify-content: left;
+  margin-left: 0.2rem;
+}
+
+.footer-img-card-comment{
+  background-image: url("../../assets/chat.png");
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: auto 100%;
+  border: none;
+  justify-content: left;
+  margin-left: 0.2rem;
+}
+
+.footer-img-card-share{
+  background-image: url("../../assets/Share.png");
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: auto 100%;
+  border: none;
+  justify-content: left;
+  margin-left: 0.2rem;
+}
