@@ -1,3 +1,10 @@
+$('.input').keyup(function () {
+  if (!this.value.match(/["'","'",","]/)) {
+      this.value = this.value.replace(/["'","'",","]/g, '');
+  }
+});
+
+
 function habilitarTelefone() {
     document.getElementById("telefone").disabled = false;
 }
