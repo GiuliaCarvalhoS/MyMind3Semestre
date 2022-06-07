@@ -13,6 +13,7 @@ const middlewares = require('./middlewares/middlewares')
 
 routes.get('/psicologos' ,PsicologoController.index)
 routes.post('/psicologos', PsicologoController.create)
+routes.post('/encontrarpsicologo' ,PsicologoController.retornaPsi)
 
 
 routes.put('/psicologos/:nomeUsuario',middlewares.auth, PsicologoController.update)
