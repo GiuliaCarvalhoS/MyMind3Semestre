@@ -1,9 +1,9 @@
-$('.input').keyup(function () {
-  if (!this.value.match(/["'","'",","]/)) {
-      this.value = this.value.replace(/["'","'",","]/g, '');
-  }
-});
-
+function Caracter_invalido(){
+  var texto = document.getElementById("nome")
+  texto.split("")
+  if(texto = "'" || "," || "=")
+  window.alert('Caracter invalido!')
+}
 
 function habilitarTelefone() {
     document.getElementById("telefone").disabled = false;
