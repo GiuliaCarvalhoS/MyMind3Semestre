@@ -61,12 +61,13 @@
   <main>
         <div id="imagemMapa">
             <div id="centralizar" class ="centralizar">
-              <img src="assets/bulbo.png" id="imagemBulbo">
+            
+              
               <span class="mdl-layout-title" id="txtBuscar"> VAMOS ENCONTRAR UM PSICOLOGO PARA VOCÊ! </span>
-              <input class="mdl-textfield__input" type="text" id="buscarCidade" placeholder="Digite o nome do Psicologo">
+              <input class="mdl-textfield__input" type="text" id="buscarPsicologo" placeholder="Digite o nome do Psicologo">
               <p>OU</p>
               <input class="mdl-textfield__input" type="text" id="buscarCidade" placeholder="Digite sua Cidade">
-              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="buscarBtn">BUSCAR</button>
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="buscarBtn" onclick="buscar(event)">BUSCAR</button>
             </div> 
         </div>    
 </main>
@@ -92,8 +93,35 @@
     </div>
       
 <script>
+ 
+  
+    async function buscar(event){
+      event.preventDefault()
 
-    var modal = document.getElementById("myModal");
+      const nomePsicologo = document.getElementById("buscarPsicologo").value
+      const cidade = document.getElementById("buscarCidade").value
+
+      
+      const body = {
+        nomePsicologo,
+        cidade
+      }
+    
+     
+      await fetch("http://127.0.0.1:3333/encontrarpsicologo",
+        {
+          method : 'POST',
+          headers: {'Content-Type':'application/json'}, 
+          body: JSON.stringify(body),
+        }
+      ).then(psicologo => psicologo.json()).then(Date => {
+          var data = Date
+          console.log(data)
+       })
+     // await fetch('http://127.0.0.1:3333/psicologos').then(cidadePsicologo => cidadePsicologo.json).then(Date => {var data = Date}, console.log(data))
+    }
+
+   /* var modal = document.getElementById("myModal");
     
     var btn = document.getElementById("buscarBtn");
     
@@ -111,10 +139,12 @@
       if (event.target == modal) {
         modal.style.display = "none";
       }
-    }
-    </script>
-
-  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    }*/
+  
+  
+  </script>
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"> </script>
+  
 
 
 </body>
