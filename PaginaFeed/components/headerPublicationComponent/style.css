@@ -1,0 +1,61 @@
+.headerPublicationComponent-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    border: solid 1px red;
+  }
+
+.headerPublicationComponent-container-card{
+    display: flex;
+    flex-direction: column;
+    width: 36rem; 
+    height: 10rem;
+    border: solid 1px red;
+    background-color: #F0F0F0;
+    border-radius: 12.6691px;
+    justify-content: top;
+    align-items: center;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+    margin: 1rem;
+  }
+
+  .publication-title-container{
+      width: 98%;
+      background-color: #FFFFFF;
+      border-radius: 3px;
+      margin: 0.5rem;
+  }
+
+  .publication-title{
+    font-family: 'Podkova', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    margin: 0.3rem;
+    margin-left: 0.5rem;
+    width: 99%;
+    border: none;
+    align-items: center;
+    letter-spacing: -0.017em;
+    color: #2E2E2E;
+    outline: none;
+  }
+
+  .publication-text-container{
+    width: 98%;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    margin: 0.5rem;
+  }
+
+  .publication-title-container:hover{
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+  }
+
+  .publication-title:hover{
+    cursor: pointer;
+  }
