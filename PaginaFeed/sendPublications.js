@@ -11,19 +11,21 @@
     const $arquivoInput = document.getElementById('arquivo')
     const $caminhoArquivo = $arquivoInput.value
 
+    
+
+    console.log($arquivoInput)
+
 
    const $arquivoValido = validarArquivo($arquivoInput,$caminhoArquivo)
 
-    if (! $arquivoValido){
-      
-    }
+    
   
   
   
     const body = {
       "titulo": nome,
       "texto": nascimento,
-      "img": telefone,
+      "img": $arquivoValido ? arquivoInput.files : '' ,
 
     }
     

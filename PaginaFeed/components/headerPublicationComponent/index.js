@@ -9,11 +9,15 @@ const  headerPublicationComponent = ()=>{
       </div>
 
       <div class="publication-text-container">
-      <input type="text" class="publication-text" placeholder="O que você deseja compartilhar?">
+      <textarea class="publication-text" placeholder="O que você gostaria de compartilhar?"></textarea>
       </div>
 
       <div class="publication-footer-container">
 
+      <input type="file" id="files" class="hidden" accept="image/*">
+      <label for="files" class="publication-file">
+      </label>
+      <button class="publication-button"> Publicar </button>
       </div>
       
     </div>
