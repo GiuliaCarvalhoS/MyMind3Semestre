@@ -1,8 +1,25 @@
 function Caracter_invalido(){
-  var texto = document.getElementById("nome")
-  texto.split("")
-  if(texto = "'" || "," || "=")
-  window.alert('Caracter invalido!')
+  var texto = document.getElementById("teste")
+  var teste = texto.value;
+  var string_array = [teste.split("")];
+  var chars_invalidos = [",","=","/","(",")","*","'"];
+  console.log(chars_invalidos)
+  console.log(string_array)
+  for(var i = 0; i < string_array.length; i++){
+      for(var c = 0; c < chars_invalidos.length; c++){
+        if (chars_invalidos[c] == string_array[i]){
+          window.alert("Erro")
+          i++
+          c++
+          console.log("1")
+        }else if(string_array[i] != chars_invalidos[i]){
+          console.log("0")
+          i++
+          c++
+          console.log(string_array[i])
+      }
+    }
+  }
 }
 
 function habilitarTelefone() {
