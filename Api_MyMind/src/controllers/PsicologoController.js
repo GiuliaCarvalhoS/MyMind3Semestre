@@ -172,7 +172,30 @@ module.exports = {
     } catch (error) {
       next(error)
     }
-   }
+   },
+   async retornaPsi(request, response, next){
+    try {
+      const {nomePsicologo, cidade} = request.body
+      const psicologos = await  knex("psicologo") 
+
+      if (!cidade){
+        const user = psicologos.find(psicologo => psicologo.nome === nomePsicologo)
+        return response.json({nome : user.nome, email : user.email , telefone : user.telefone})
+      }
+      else if (!nomePsicologo) {
+        const user = psicologos.find(psicologo => psicologo.cidade === cidade)
+        return response.json({nome : user.nome, email : user.email , telefone : user.telefone})
+      }
+      else{
+        const user = psicologos.find(psicologo => psicologo.cidade === cidade && psicologo.nome === nomePsicologo)
+        return response.json({nome : user.nome, email : user.email , telefone : user.telefone})
+      }
+      
+    } catch (error) {
+      next(error)
+    }
+   
+ }
   
   
 }
