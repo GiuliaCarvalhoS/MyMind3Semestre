@@ -5,8 +5,8 @@
 exports.up = function(knex) {
         return knex.schema.createTable("publicacao", table =>{
           table.string("id",255).primary()
-          table.string("titulo", 80)
           table.string("texto", 255)
+          table.string("titulo", 80)
           table.string("id_psicologo", 255).references('id').on('psicologo').onDelete('CASCADE')
         
 })};

@@ -31,7 +31,11 @@ module.exports ={
           expiresIn:86400
         })
 
+        req.userToken = token
+
+        
         return res.send({user, token})
+        
 
       
     } catch (error) {

@@ -9,6 +9,8 @@ module.exports ={
 
   async getPublicacao (req, res, next){
 
+    const userId = req.userId
+
     try {
 
       const publicacoes = await knex("publicacao")
@@ -26,15 +28,23 @@ module.exports ={
   },
 
   async publicar(req, res, next){
+
+    const userId = req.userId
+
+    
     try{
       
       
-    const publicacao= req.body
+    const {texto}= req.body
+
+  
 
     await knex('publicacao').insert({
        id:uuidv4(),
-       texto: publicacao.texto,
-       titulo: publicacao.titulo
+       id_psicologo:userId,
+       texto,
+       
+       
 
     })
     return res.status(201).send("Publição com sucesso")

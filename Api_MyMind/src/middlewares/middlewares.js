@@ -20,6 +20,8 @@ module.exports = {
   async auth(req, res, next){
     const authHeader = req.headers.authorization
 
+    
+
     if(!authHeader){
       return res.status(401).send({error: "Sem token"})
     }
@@ -39,8 +41,15 @@ module.exports = {
     jwt.verify(token,authConfig.secret,(err,decodificado)=>{
       if(err) return res.status(401).send({error: "token invalido"})
 
-      req.userId = decodificado.userId
-      next()
+      else{
+        const id = decodificado.id
+        req.userId = id
+
+        
+          
+        
+        next()
+      }
     })
 
 

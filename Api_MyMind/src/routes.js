@@ -15,16 +15,19 @@ routes.get('/psicologos' ,PsicologoController.index)
 routes.post('/psicologos', PsicologoController.create)
 
 
-routes.put('/psicologos/:nomeUsuario',middlewares.auth, PsicologoController.update)
-routes.delete('/psicologos/:nomeUsuario',middlewares.auth, PsicologoController.delete)
+routes.put('/psicologos/:nomeUsuario', PsicologoController.update)
+routes.delete('/psicologos/:nomeUsuario', PsicologoController.delete)
 
 //rota para autenticação do login
-routes.post('/authenticate', authController.authenticate)
+routes.post('/login',authController.authenticate)
 
 
 //rota das publicações
-routes.get("/feed",publicacaoController.getPublicacao)
-routes.post("/feed",publicacaoController.publicar)
+routes.get("/feed",
+  
+  publicacaoController.getPublicacao,
+)
+routes.post("/publicarfeed",middlewares.auth,publicacaoController.publicar)
 routes.delete('/feed/:id', publicacaoController.delete)
 module.exports = routes 
 
