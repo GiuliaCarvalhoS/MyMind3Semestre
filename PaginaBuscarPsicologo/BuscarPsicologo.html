@@ -95,13 +95,33 @@
 <script>
  
   
-    async function cadastrar(event){
-
+    async function buscar(event){
       event.preventDefault()
-      await fetch('http://127.0.0.1:3333/encontrarpsicologo').then(nomePsicologo => nomePsicologo.json).then(Date => {var data = Date}, console.log(data))
+
+      const nomePsicologo = document.getElementById("buscarPsicologo").value
+      const cidade = document.getElementById("buscarCidade").value
+
+      
+      const body = {
+        nomePsicologo,
+        cidade
+      }
+    
+     
+      await fetch("http://127.0.0.1:3333/encontrarpsicologo",
+        {
+          method : 'POST',
+          headers: {'Content-Type':'application/json'}, 
+          body: JSON.stringify(body),
+        }
+      ).then(psicologo => psicologo.json()).then(Date => {
+          var data = Date
+          console.log(data)
+       })
      // await fetch('http://127.0.0.1:3333/psicologos').then(cidadePsicologo => cidadePsicologo.json).then(Date => {var data = Date}, console.log(data))
     }
-    var modal = document.getElementById("myModal");
+
+   /* var modal = document.getElementById("myModal");
     
     var btn = document.getElementById("buscarBtn");
     
@@ -119,7 +139,7 @@
       if (event.target == modal) {
         modal.style.display = "none";
       }
-    }
+    }*/
   
   
   </script>
