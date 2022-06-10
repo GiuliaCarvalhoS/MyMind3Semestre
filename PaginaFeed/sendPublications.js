@@ -1,3 +1,37 @@
+// TESTANDO CONVERSO DE ARQUIVOco
+const teste = (te)=>{
+  const $arquivoInput = document.getElementById("files")
+
+  // const merda = JSON.stringify(te.target.files[0])
+   
+  // console.log(`teste: ${merda}`)
+
+  $arquivoInput.addEventListener('change', event => {
+
+    console.log(event.target.files[0])
+    
+
+    const data = new FormData()
+    data.append('file', event.target.files[0])
+
+    console.log(data)
+
+})
+
+
+
+  // const teste = validarArquivo($arquivoInput, $caminhoArquivo)
+
+  // console.log(teste)
+}
+
+
+
+
+
+
+// __________________________________________
+
 
 
   function cadastrar(event){
@@ -8,8 +42,7 @@
     
     const url = "http://127.0.0.1:3333/publicar"
 
-    const $arquivoInput = document.getElementById('arquivo')
-    const $caminhoArquivo = $arquivoInput.value
+    
 
     
 
@@ -71,6 +104,14 @@ function validarArquivo(arquivoInput, caminhoArquivo){
   }
   else{
     if (arquivoInput.files && arquivoInput.files[0]) {
+
+      const merda = JSON.stringify(arquivoInput.files)
+      const merda2 = JSON.stringify(arquivoInput.files[0])
+      console.log(`arquivoInput.files: ${merda}`)
+      console.log(`arquivoInput.files[0]: ${merda2}`)
+
+      
+
       // fazer leitura do arquivo
         // const reader = new FileReader();
         // reader.onload = function(e) {

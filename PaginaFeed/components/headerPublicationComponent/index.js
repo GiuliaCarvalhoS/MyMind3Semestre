@@ -14,7 +14,7 @@ const  headerPublicationComponent = ()=>{
 
       <div class="publication-footer-container">
 
-      <input type="file" id="files" class="hidden" accept="image/*">
+      <input type="file" id="files" class="hidden" accept="image/*" onclick="teste(event)">
       <label for="files" class="publication-file">
       </label>
       <button class="publication-button"> Publicar </button>
