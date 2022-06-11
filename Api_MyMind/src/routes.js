@@ -27,7 +27,7 @@ routes.post('/login',authController.authenticate)
 
 
 //rota das publicações
-routes.get("/feed",publicacaoController.getPublicacao)
+routes.get("/feed",middlewares.auth,publicacaoController.getPublicacao)
 routes.post("/publicar",multer(multerConfig).single("file"),publicacaoController.publicar)
 routes.delete('/feed/:id', publicacaoController.delete)
 
