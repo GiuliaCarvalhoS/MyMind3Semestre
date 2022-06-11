@@ -3,27 +3,23 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
-module.exports = {
+ module.exports = {
 
-    development: {
-      client: 'mysql',
-      connection: {
-      host : '127.0.0.1',
-      port : 3307,
-      user : 'root',
-      password : 'root',
-      database : 'Mymind'
-    },
-      migrations: {
-      tableName: 'knex_migrations',
-      directory: `${__dirname}/src/database/migrations`
-    },
-    
-  
+  development: {
+    client: 'mysql',
+    connection: {
+    host : '127.0.0.1',
+    port : 3307,
+    user : 'root',
+    password : 'root',
+    database : 'mm'
   },
-    
-    
- 
+    migrations: {
+    tableName: 'knex_migrations',
+    directory: `${__dirname}/src/database/migrations`
+  },
+  
 
+},
 
-};
+ }

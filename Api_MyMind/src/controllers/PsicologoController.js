@@ -52,7 +52,7 @@ module.exports = {
         nomeUsuario, 
         senhaUsuario,
         dataNascimento,
-
+        x,
         
       } = request.body
 
@@ -84,6 +84,7 @@ module.exports = {
           instituicaoEnsino,
           nomeUsuario,
           senhaUsuario:hash,
+          x,
          })
  
          return response.status(201).send("Usuario cadastrado com sucesso")

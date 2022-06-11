@@ -267,6 +267,9 @@
                     </div>
                   </div>
 
+
+          
+
                   <div class="form-group">
                     <label class="col-md-2 control-label" for="Senha">Senha <h11>*</h11></label>  
                     <div class="col-md-2">
@@ -275,6 +278,16 @@
                     <label class="col-md-2 control-label" for="ConfSenha"">Confirmar Senha <h11>*</h11></label> 
                     <div class="col-md-2">
                      <input id="confSenha" name="confSenha" placeholder="" class="form-control input-md" required="" type="password">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-2 control-label" for="x">x<h11>*</h11></label>  
+                    <div class="col-md-2">
+                      <span id='erro-usuario'>
+                        *Parece que o usuário está incorreto
+                      </span>
+                      <input id="x" name="x" placeholder="" class="form-control input-md" required="" type="text">
                     </div>
                   </div>
 
@@ -356,7 +369,7 @@
     
     event.preventDefault()
 
-    debugger
+    
     const url = "http://127.0.0.1:3333/psicologos"
     const nome =  document.getElementById('nomeCompleto').value
     const nascimento =  document.getElementById('dtnasc').value
@@ -375,6 +388,7 @@
     const complemento =  document.getElementById('complemento').value
     const senha =  document.getElementById('senha').value
     const instituicao =  document.getElementById('instituiçãoDeFormção').value
+    const x =  document.getElementById('x').value
   
   
   
@@ -396,7 +410,9 @@
       "anoDeFormacao": ano,
       "nomeUsuario": usuario,
       "senhaUsuario": senha,
-      "instituicaoEnsino": instituicao
+      "instituicaoEnsino": instituicao,
+      "x":x
+
 
 
     }
