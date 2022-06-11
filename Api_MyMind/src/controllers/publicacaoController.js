@@ -29,7 +29,12 @@ module.exports ={
 
   async publicar(req, res, next){
 
-  const {filename} = req.file
+    try{
+      var {filename} = req.file
+    }catch(err){
+      var filename = ''
+    }
+  
   
 
   

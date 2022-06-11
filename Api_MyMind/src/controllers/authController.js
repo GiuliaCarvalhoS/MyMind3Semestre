@@ -2,6 +2,7 @@
 const knex = require('../database')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const axios = require('axios').default;
 
 const authConfig = require( '../config/auth.json')
 
@@ -31,10 +32,16 @@ module.exports ={
           expiresIn:86400
         })
 
-        req.userToken = token
+        
+
+        return axios({
+          method: 'post',
+          url: '/feed',
+          userToken:token
+        });
 
         
-        return res.send({user, token})
+      
         
 
       

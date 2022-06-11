@@ -91,6 +91,8 @@ function fazpostImg(url,formDatac){
 
  
   }
+
+  location.reload()
   return req.responseText
 
 }

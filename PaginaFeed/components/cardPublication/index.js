@@ -10,11 +10,24 @@ export const cardPublication = (publicacoes)=>{
       <p class="usuario-card">@lucas</p>
     </div>
 
-    <div class="container-img-card"
-      <img src="../../../Api_MyMind/tmp/uploads/" class="img-publi">
-      <img src="../../../Api_MyMind/tmp/uploads/${publicacao.imagem}" alt="" class="img-publi">
+    
+      ${!(publicacao.imagem === '') 
+        ? `
+        <div class="container-img-card">
+            <img src="../../../Api_MyMind/tmp/uploads/${publicacao.imagem}" alt="" class="img-publi">
+        </div>  
+            `
+        
 
-    </div>
+            
+        : `
+            
+      
+            
+          `
+      }
+
+    
 
     <div class="container-txt-card">
       <p>${publicacao.texto}</p>
