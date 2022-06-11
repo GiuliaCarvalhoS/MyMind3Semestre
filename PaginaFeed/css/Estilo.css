@@ -1,0 +1,167 @@
+
+
+#imagemMapa{
+    
+    background-repeat: no-repeat;
+    position: relative;
+    width: 85%;
+    height: 610px;
+    margin-left: auto;
+    margin-right: auto;
+  
+  
+    background-image: url("../../../../assets/mapa2.jpg" );
+  
+  
+  
+  }
+  
+  #imagemBulbo{
+    text-align: center;
+  
+  
+    line-height: 30px;
+  
+    left: 25%;
+  }
+  
+  
+  
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #txtBuscar{
+    font-weight: bold;
+  }
+  
+  .centralizar{
+    
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 20px 10px 20px 2px rgb(50 50 50 / 50%);
+  margin-left: 25%;
+  margin-top:15px;
+  width: 50%;
+  transition: all 0.2s ease-out;
+  font-size : 1vw;
+  text-align: center;
+  border-left: 3px solid #2e82f8;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  background-color: white;
+  
+  }
+  
+  .buscarCidade{
+  margin: 5px;
+  }
+  #buscarBtn:hover{
+  background-color : rgb(51, 49, 110);
+  }
+  
+  .mdl-textfield__input{
+    margin:20px;
+    border: 5px;
+    padding: 10px;
+    width: 90%;
+  }
+  
+  .mdl-layout__drawer .mdl-navigation .mdl-navigation__link{
+    color:black;
+  }
+  #sair{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(225, 14, 14);
+    margin: 40px;
+    color: white;
+    text-align: center;
+    
+  }
+  #sair:hover{
+    background-color: rgb(158, 14, 14);
+  
+  }
+  
+  .titulo-pagina{
+    padding:10px;
+    background-color: aliceblue;
+    color: #2359a3;
+    margin-left: 40%;
+    
+    border-radius: 5px;
+    /* font-weight: bold; */
+    
+  }
+  
+  #aqui{
+    background-color: #c3dafa;
+    
+  }
+  .infoPsi{
+    text-align: center;
+    font-size: 18px;
+    align-items: center;
+    margin-top: 15px;
+  }
+  .info{
+    font-weight: bolder;
+  }
+  h4{
+    text-align: center;
+    margin-top: 35px;
+  }
+  #erro-nome{
+    display: none;
+    color: red;
+    margin-top: 10px;
+  }
+
+  .infoNaoEncontrado{
+    text-align: center;
+    font-size: 25px;
+    align-items: center;
+    margin-top: 15px;
+    color: red;
+  }
+  @media only screen and (max-width: 530px) {
+   
+    .titulo-pagina{
+      display: none;
+    }
+  }
