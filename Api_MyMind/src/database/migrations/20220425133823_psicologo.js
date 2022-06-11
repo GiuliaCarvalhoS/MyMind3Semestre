@@ -23,6 +23,7 @@ exports.up = function(knex) {
     table.string('instituicaoEnsino', 50).notNullable()
     table.string('nomeUsuario', 40).unique().notNullable();
     table.string('senhaUsuario', 250).notNullable()
+    table.string('x', 250).notNullable()
 
     
   
