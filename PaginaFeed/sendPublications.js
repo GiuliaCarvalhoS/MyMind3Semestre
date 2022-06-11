@@ -61,9 +61,7 @@ function cadastrar(event){
   formData.append("titulo",$titulo)
 
 
-  for (var pair of formData.entries()) {
-    console.log(pair[0]+ ', ' + pair[1]); 
-}
+  
   
   fazpostImg(url,formData)
   
