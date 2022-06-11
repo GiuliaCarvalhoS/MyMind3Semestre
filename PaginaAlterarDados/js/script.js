@@ -269,7 +269,7 @@ $usuario.addEventListener('blur',()=>{
   
 
   
-  if(inputUsuario.length < 5){
+  if(inputUsuario.length < 4){
     $usuario.style.borderColor = "red" //muda a borda para vermelho
     document.getElementById('btn-cadastrar').disabled=true //desabilita o botão de cadastro
     document.querySelector("#erro-usuario").style.display ='flex'

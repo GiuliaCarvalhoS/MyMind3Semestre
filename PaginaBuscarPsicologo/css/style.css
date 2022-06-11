@@ -131,7 +131,19 @@
     background-color: #c3dafa;
     
   }
-  
+  .infoPsi{
+    text-align: center;
+    font-size: 18px;
+    align-items: center;
+    margin-top: 15px;
+  }
+  .info{
+    font-weight: bolder;
+  }
+  h4{
+    text-align: center;
+    margin-top: 35px;
+  }
   
   @media only screen and (max-width: 530px) {
    
