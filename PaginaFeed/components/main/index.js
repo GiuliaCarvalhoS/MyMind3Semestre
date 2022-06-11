@@ -5,7 +5,7 @@ import cardPublication from '../cardPublication/index.js'
 
 const data = await fetch("http://127.0.0.1:3333/feed").then(feed => feed.json()).then(data=>{
 
-  
+  debugger
   const $data = data 
   if(!$data){
 

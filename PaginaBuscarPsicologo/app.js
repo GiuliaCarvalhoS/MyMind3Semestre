@@ -81,15 +81,24 @@ function vazio(obj) {
     
 function genio(recebe){
     const app = (fet)=>{
+        if (!fet.resposta){
+          return `
+          <div class="infoPsi">
+          <p class"info">${fet.nome}<p>
+          <p class"info">${fet.telefone}<p>
+          <p class"info">${fet.email}<p>
+          </div> 
+          `
+        
+      }
+      else{
         return `
-        <div class="infoPsi">
-        <p class"info">${fet.nome}<p>
-        <p class"info">${fet.telefone}<p>
-        <p class"info">${fet.email}<p>
+        <div class="infoNaoEncontrado">
+        <p class"info">${fet.resposta}<p>
         </div> 
         `
-       
-    }
+      }
+   }
     
     
     
