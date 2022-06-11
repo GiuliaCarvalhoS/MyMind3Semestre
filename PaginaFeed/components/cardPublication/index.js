@@ -1,21 +1,23 @@
 
 
 
-export const cardPublication = (titulo, texto)=>{
+export const cardPublication = (publicacoes)=>{
   return `
-  <div class="container-conteudo-card">
+    ${publicacoes.map(publicacao =>`
+    <div class="container-conteudo-card">
     <div class="container-header-card">
-      <p class="titulo-header">${titulo}</p>
+      <p class="titulo-header">${publicacao.titulo}</p>
       <p class="usuario-card">@lucas</p>
     </div>
 
     <div class="container-img-card"
-      <img src="#" class="img-publi"/>
+      <img src="../../../Api_MyMind/tmp/uploads/" class="img-publi">
+      <img src="../../../Api_MyMind/tmp/uploads/${publicacao.imagem}" alt="" class="img-publi">
 
     </div>
 
     <div class="container-txt-card">
-      <p>${texto}</p>
+      <p>${publicacao.texto}</p>
     </div>
 
     <div class="container-footer-card">
@@ -30,6 +32,9 @@ export const cardPublication = (titulo, texto)=>{
     </div>
     
   </div>
+    
+    
+    `)}
   
   
   `

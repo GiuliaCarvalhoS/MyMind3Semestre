@@ -1,6 +1,10 @@
 main{
-  height: 100vh;
+  max-height: auto;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  overflow: hidden;
 }

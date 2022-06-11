@@ -29,7 +29,10 @@ module.exports ={
 
   async publicar(req, res, next){
 
-  //const {filename} = req.file
+  const {filename} = req.file
+  
+
+  
   
 
   const userId = req.userId
@@ -38,14 +41,16 @@ module.exports ={
     try{
       
       
-    const {texto,titulo}= req.body
+    const conteudo= req.body
+    
 
   
 
     await knex('publicacao').insert({
        id:uuidv4(),
-       texto,
-       titulo,
+       texto: conteudo.texto,
+       titulo:conteudo.titulo,
+       imagem:filename
        
 
 

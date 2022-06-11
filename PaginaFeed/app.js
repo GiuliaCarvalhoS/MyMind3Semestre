@@ -1,7 +1,6 @@
 
 import headerComponent from "./components/headerComponent/index.js"
-import headerPublicationComponent from "./components/headerPublicationComponent/index.js"
-
+import headerPublicationComponent from './components/headerPublicationComponent/index.js'
 import main from "./components/main/index.js"
 
 
@@ -9,6 +8,7 @@ import main from "./components/main/index.js"
 
 const $headerComponent = headerComponent()
 const $headerPublicationComponent = headerPublicationComponent()
+
 
 const $main = main()
 
@@ -18,8 +18,8 @@ const $main = main()
 const app = ()=>{
   return `
     ${$headerComponent}
+    
     ${$headerPublicationComponent}
-
     ${$main}
 
     

@@ -49,53 +49,79 @@ function cadastrar(event){
   
   event.preventDefault()
 
-  debugger
+  
   const url = "http://127.0.0.1:3333/publicar"
 
   const $texto = document.getElementById('textoPublicacao').value
   const $titulo = document.getElementById('tituloPublicacao').value
 
 
-  const body ={
-    "texto": $texto,
-    "titulo":$titulo
-  }
+  
+  formData.append("texto",$texto)
+  formData.append("titulo",$titulo)
 
 
+  for (var pair of formData.entries()) {
+    console.log(pair[0]+ ', ' + pair[1]); 
+}
   
+  fazpostImg(url,formData)
   
-  fazpost(url, body, )
 
 
   
 }
   
-function fazpost(url, body,file){
+function fazpostImg(url,formDatac){
 
   const req = new XMLHttpRequest()
   req.open("POST", url, true)
-  
-  req.setRequestHeader('Content-type', 'application/json')
-  
 
-  req.send(JSON.stringify(body))
   
-  req.send(formData)
+  req.overrideMimeType("text/plain; charset=x-user-defined")
 
+  
+  req.send(formDatac)
   
 
   req.onload = function(){
 
-    window.alert(this.responseText)
-    console.log(this.responseText)
+        window.alert(this.responseText)
+        console.log(this.responseText)
 
-    
-
+ 
   }
-
   return req.responseText
 
 }
+
+// function fazpost(url,body){
+
+//   const req = new XMLHttpRequest()
+//   req.open("POST", url, true)
+
+//   // req.setRequestHeader('Content-type', 'multipart/form-data');
+//   req.setRequestHeader('Content-Type', 'application/json')
+//   // req.overrideMimeType("text/plain; charset=x-user-defined")
+
+//   req.send(JSON.stringify(body))
+  
+  
+
+  
+
+//   req.onload = function(){
+
+//     window.alert(this.responseText)
+//     console.log(this.responseText)
+
+    
+
+//   }
+
+//   return req.responseText
+
+// }
 
 
 
