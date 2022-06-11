@@ -1,3 +1,5 @@
+
+
 #imagemMapa{
     
     background-repeat: no-repeat;
@@ -144,7 +146,11 @@
     text-align: center;
     margin-top: 35px;
   }
-  
+  #erro-nome{
+    display: none;
+    color: red;
+    margin-top: 10px;
+  }
   @media only screen and (max-width: 530px) {
    
     .titulo-pagina{

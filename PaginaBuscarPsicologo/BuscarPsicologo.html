@@ -64,13 +64,17 @@
             
               
               <span class="mdl-layout-title" id="txtBuscar"> VAMOS ENCONTRAR UM PSICOLOGO PARA VOCÊ! </span>
+              <span id='erro-nome'>
+                *Tenha certeza de ter digitado um nome ou uma cidade
+              </span>
               <input class="mdl-textfield__input" type="text" id="buscarPsicologo" placeholder="Digite o nome do Psicologo">
               <p>OU</p>
-              <input class="mdl-textfield__input" type="text" id="buscarCidade" placeholder="Digite sua Cidade">
-              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="buscarBtn" onclick="funcao(event)">BUSCAR</button>
+              <input  id="buscarCidade" class="mdl-textfield__input" type="text"placeholder="Digite sua Cidade">
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" disabled="" id="buscarBtn" onclick="funcao(event)">BUSCAR</button>
             </div> 
             <h4>INFORMAÇÕES DO PSICÓLOGO</h4>
             <div id = "root"></div>
+          
         </div>    
 </main>
 
