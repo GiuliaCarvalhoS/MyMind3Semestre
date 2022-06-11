@@ -1,5 +1,8 @@
 
 const express = require('express')
+const multer = require('multer')
+const multerConfig = require('./config/multer.js')
+
 const authController = require('./controllers/authController')
 
 const routes = express.Router()
@@ -25,7 +28,10 @@ routes.post('/login',authController.authenticate)
 
 //rota das publicações
 routes.get("/feed",publicacaoController.getPublicacao)
-routes.post("/publicar",publicacaoController.publicar)
+routes.post("/publicar",multer(multerConfig).single("file"),publicacaoController.publicar)
 routes.delete('/feed/:id', publicacaoController.delete)
+
+
+
 module.exports = routes 
 

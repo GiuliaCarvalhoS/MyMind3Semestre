@@ -7,6 +7,7 @@ exports.up = function(knex) {
           table.string("id",255).primary()
           table.string("texto", 255)
           table.string("titulo", 80)
+          table.string('imagem', 255)
           table.string("id_psicologo", 255).references('id').on('psicologo').onDelete('CASCADE')
         
 })};

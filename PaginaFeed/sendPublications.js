@@ -8,11 +8,11 @@ const teste = (te)=>{
 
   $arquivoInput.addEventListener('change', event => {
 
-    console.log(event.target.files[0])
+    
     
 
-    const data = new FormData()
-    data.append('file', event.target.files[0])
+    
+    const data =  event.target.files[0]
 
     console.log(data)
 
@@ -20,9 +20,7 @@ const teste = (te)=>{
 
 
 
-  // const teste = validarArquivo($arquivoInput, $caminhoArquivo)
 
-  // console.log(teste)
 }
 
 

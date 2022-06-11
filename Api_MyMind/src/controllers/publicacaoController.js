@@ -29,22 +29,25 @@ module.exports ={
 
   async publicar(req, res, next){
 
-    const userId = req.userId
+  const {filename} = req.file
+  
+
+  const userId = req.userId
 
     
     try{
       
       
-    const {texto}= req.body
+    const {texto,titulo}= req.body
 
   
 
     await knex('publicacao').insert({
        id:uuidv4(),
-       id_psicologo:userId,
        texto,
-       
-       
+       titulo,
+       imagem:filename,
+
 
     })
     return res.status(201).send("Publição com sucesso")
