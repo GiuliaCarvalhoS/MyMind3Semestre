@@ -29,7 +29,7 @@ module.exports ={
 
   async publicar(req, res, next){
 
-  const {filename} = req.file
+  //const {filename} = req.file
   
 
   const userId = req.userId
@@ -46,7 +46,7 @@ module.exports ={
        id:uuidv4(),
        texto,
        titulo,
-       imagem:filename,
+       
 
 
     })

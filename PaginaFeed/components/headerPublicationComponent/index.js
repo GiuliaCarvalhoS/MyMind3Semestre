@@ -5,11 +5,11 @@ const  headerPublicationComponent = ()=>{
     <div class = "headerPublicationComponent-container-card" >
 
       <div class = "publication-title-container">
-      <input type="text" class="publication-title" placeholder="Título"> 
+      <input type="text" class="publication-title" id='tituloPublicacao' placeholder="Título"> 
       </div>
 
       <div class="publication-text-container">
-      <textarea class="publication-text" placeholder="O que você gostaria de compartilhar?"></textarea>
+      <textarea class="publication-text" id='textoPublicacao' placeholder="O que você gostaria de compartilhar?"></textarea>
       </div>
 
       <div class="publication-footer-container">
@@ -17,7 +17,7 @@ const  headerPublicationComponent = ()=>{
       <input type="file" id="files" class="hidden" accept="image/*" onclick="teste(event)">
       <label for="files" class="publication-file">
       </label>
-      <button class="publication-button"> Publicar </button>
+      <button class="publication-button"  onclick="cadastrar(event)" > Publicar </button>
       </div>
       
     </div>
