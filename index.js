@@ -26,52 +26,17 @@ $entrar.addEventListener('click', ()=> openModal())
 //verificar se o usuario é cadastrado e então verificar a senha
 
 
-$btnEntrar.addEventListener('click',()=>{
+// $btnEntrar.addEventListener('click',()=>{
+
+ 
+  
 
   
   
-  const usuarios = JSON.parse(localStorage.getItem("usuarios"))
+// })
 
-  
-  
-  const usuarioDigitado = $usuario.value
-  const senhaDigitada = $senha.value
-  
-  var usuario = -1
-  
+// //Cadastrar
 
-  try{
-    var usuario = usuarios.findIndex((usuario)=>usuario.user === usuarioDigitado && usuario.password === senhaDigitada)
-
-  }catch(error){
-    var usuario = -1
-  }
-  
-  if(usuario >= 0 ){
-    
-    $senhaInvalida.style.display= 'none'
-    
-    
-    usuarios[usuario].loged = true
-    
-    window.localStorage.setItem("usuarios",JSON.stringify(usuarios))
-  
-    const caminho = "./PaginaFeed/FeedPsicologo.html"
-    
-
-    window.location.assign(caminho)
-
-    
-
-  }else{
-    $senhaInvalida.style.display='block'
-    
-    
-  }
-})
-
-//Cadastrar
-
-$btnCadastrar.addEventListener('click',()=>{
-  window.location.assign("../Externoo/Cadastros/cliente.html")
-})
+// $btnCadastrar.addEventListener('click',()=>{
+//   window.location.assign("../Externoo/Cadastros/cliente.html")
+// })
