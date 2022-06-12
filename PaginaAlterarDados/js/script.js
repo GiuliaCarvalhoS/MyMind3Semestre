@@ -1,22 +1,17 @@
-function Caracter_invalido(){
-  var texto = document.getElementById("teste")
-  var teste = texto.value;
-  var string_array = [teste.split("")];
-  var chars_invalidos = [",","=","/","(",")","*","'"];
+function Caracter_invalido() {
+  var texto = document.getElementById("nome")
+  var teste = texto.value.split("");
+  var chars_invalidos = [",", "=", "/", "(", ")", "*", "'"];
   console.log(chars_invalidos)
-  console.log(string_array)
-  for(var i = 0; i < string_array.length; i++){
-      for(var c = 0; c < chars_invalidos.length; c++){
-        if (chars_invalidos[c] == string_array[i]){
-          window.alert("Erro")
-          i++
-          c++
-          console.log("1")
-        }else if(string_array[i] != chars_invalidos[i]){
-          console.log("0")
-          i++
-          c++
-          console.log(string_array[i])
+  console.log(teste)
+  for (var i = 0; i < teste.length; i++) {
+    for (var c = 0; c < chars_invalidos.length; c++) {
+      if (chars_invalidos[c] === teste[i]) {
+        window.alert("Erro")
+        console.log("1")
+      } else if (teste[i] !== chars_invalidos[i]) {
+        console.log("0")
+        console.log(teste[i])
       }
     }
   }
@@ -59,6 +54,26 @@ function habilitarSenha(){
 const $nome = document.getElementById("nome")
 
 $nome.addEventListener('blur',()=>{
+  function Caracter_invalido() {
+    var texto = document.getElementById("nome")
+    var teste = texto.value.split("");
+    var chars_invalidos = [",", "=", "/", "(", ")", "*", "'"];
+    console.log(chars_invalidos)
+    console.log(teste)
+    for (var i = 0; i < teste.length; i++) {
+      for (var c = 0; c < chars_invalidos.length; c++) {
+        if (chars_invalidos[c] === teste[i]) {
+          window.alert("Erro")
+          console.log("1")
+          disabled=true
+          Caracter_invalido()
+        } else if (teste[i] !== chars_invalidos[i]) {
+          console.log("0")
+          console.log(teste[i])
+        }
+      }
+    }
+  }
   
   const inputUsuario = $nome.value
 
@@ -91,6 +106,26 @@ $nome.addEventListener('blur',()=>{
 const $numeroDeTelefone = document.getElementById("telefone")
 
 $numeroDeTelefone.addEventListener('blur',()=>{
+  function Caracter_invalido() {
+    var texto = document.getElementById("telefone")
+    var teste = texto.value.split("");
+    var chars_invalidos = [",", "=", "/", "(", ")", "*", "'"];
+    console.log(chars_invalidos)
+    console.log(teste)
+    for (var i = 0; i < teste.length; i++) {
+      for (var c = 0; c < chars_invalidos.length; c++) {
+        if (chars_invalidos[c] === teste[i]) {
+          window.alert("Erro")
+          console.log("1")
+          disabled=true
+          Caracter_invalido()
+        } else if (teste[i] !== chars_invalidos[i]) {
+          console.log("0")
+          console.log(teste[i])
+        }
+      }
+    }
+  }
   
   const inputUsuario =parseInt($numeroDeTelefone.value)
 
@@ -125,7 +160,26 @@ const $email = document.getElementById("email")
 
 
 $email.addEventListener('blur',()=>{
-  
+  function Caracter_invalido() {
+    var texto = document.getElementById("email")
+    var teste = texto.value.split("");
+    var chars_invalidos = [",", "=", "/", "(", ")", "*", "'"];
+    console.log(chars_invalidos)
+    console.log(teste)
+    for (var i = 0; i < teste.length; i++) {
+      for (var c = 0; c < chars_invalidos.length; c++) {
+        if (chars_invalidos[c] === teste[i]) {
+          window.alert("Erro")
+          console.log("1")
+          disabled=true
+          Caracter_invalido()
+        } else if (teste[i] !== chars_invalidos[i]) {
+          console.log("0")
+          console.log(teste[i])
+        }
+      }
+    }
+  }
   const inputUsuario = $email.value
   
 
@@ -162,6 +216,26 @@ $email.addEventListener('blur',()=>{
 const $cep = document.getElementById("cep")
 
 $cep.addEventListener('blur',()=>{
+  function Caracter_invalido() {
+    var texto = document.getElementById("cep")
+    var teste = texto.value.split("");
+    var chars_invalidos = [",", "=", "/", "(", ")", "*", "'"];
+    console.log(chars_invalidos)
+    console.log(teste)
+    for (var i = 0; i < teste.length; i++) {
+      for (var c = 0; c < chars_invalidos.length; c++) {
+        if (chars_invalidos[c] === teste[i]) {
+          window.alert("Erro")
+          console.log("1")
+          disabled=true
+          Caracter_invalido()
+        } else if (teste[i] !== chars_invalidos[i]) {
+          console.log("0")
+          console.log(teste[i])
+        }
+      }
+    }
+  }
   
   const inputUsuario = $cep.value
 
@@ -187,6 +261,26 @@ $cep.addEventListener('blur',()=>{
 const $cidade = document.getElementById("cidade")
 
 $cidade.addEventListener('blur',()=>{
+  function Caracter_invalido() {
+    var texto = document.getElementById("cidade")
+    var teste = texto.value.split("");
+    var chars_invalidos = [",", "=", "/", "(", ")", "*", "'"];
+    console.log(chars_invalidos)
+    console.log(teste)
+    for (var i = 0; i < teste.length; i++) {
+      for (var c = 0; c < chars_invalidos.length; c++) {
+        if (chars_invalidos[c] === teste[i]) {
+          window.alert("Erro")
+          console.log("1")
+          disabled=true
+          Caracter_invalido()
+        } else if (teste[i] !== chars_invalidos[i]) {
+          console.log("0")
+          console.log(teste[i])
+        }
+      }
+    }
+  }
   
   const inputUsuario = $cidade.value
 
@@ -212,6 +306,26 @@ $cidade.addEventListener('blur',()=>{
 const $bairro = document.getElementById("bairro")
 
 $bairro.addEventListener('blur',()=>{
+  function Caracter_invalido() {
+    var texto = document.getElementById("bairro")
+    var teste = texto.value.split("");
+    var chars_invalidos = [",", "=", "/", "(", ")", "*", "'"];
+    console.log(chars_invalidos)
+    console.log(teste)
+    for (var i = 0; i < teste.length; i++) {
+      for (var c = 0; c < chars_invalidos.length; c++) {
+        if (chars_invalidos[c] === teste[i]) {
+          window.alert("Erro")
+          console.log("1")
+          disabled=true
+          Caracter_invalido()
+        } else if (teste[i] !== chars_invalidos[i]) {
+          console.log("0")
+          console.log(teste[i])
+        }
+      }
+    }
+  }
   
   const inputUsuario = $bairro.value
 
@@ -237,6 +351,26 @@ $bairro.addEventListener('blur',()=>{
 const $rua = document.getElementById("rua")
 
 $rua.addEventListener('blur',()=>{
+  function Caracter_invalido() {
+    var texto = document.getElementById("rua")
+    var teste = texto.value.split("");
+    var chars_invalidos = [",", "=", "/", "(", ")", "*", "'"];
+    console.log(chars_invalidos)
+    console.log(teste)
+    for (var i = 0; i < teste.length; i++) {
+      for (var c = 0; c < chars_invalidos.length; c++) {
+        if (chars_invalidos[c] === teste[i]) {
+          window.alert("Erro")
+          console.log("1")
+          disabled=true
+          Caracter_invalido()
+        } else if (teste[i] !== chars_invalidos[i]) {
+          console.log("0")
+          console.log(teste[i])
+        }
+      }
+    }
+  }
   
   const inputUsuario = $rua.value
 
@@ -262,6 +396,26 @@ $rua.addEventListener('blur',()=>{
 const $usuario = document.getElementById("usuario")
 
 $usuario.addEventListener('blur',()=>{
+  function Caracter_invalido() {
+    var texto = document.getElementById("usuario")
+    var teste = texto.value.split("");
+    var chars_invalidos = [",", "=", "/", "(", ")", "*", "'"];
+    console.log(chars_invalidos)
+    console.log(teste)
+    for (var i = 0; i < teste.length; i++) {
+      for (var c = 0; c < chars_invalidos.length; c++) {
+        if (chars_invalidos[c] === teste[i]) {
+          window.alert("Erro")
+          console.log("1")
+          disabled=true
+          Caracter_invalido()
+        } else if (teste[i] !== chars_invalidos[i]) {
+          console.log("0")
+          console.log(teste[i])
+        }
+      }
+    }
+  }
   
   const inputUsuario = $usuario.value
 
@@ -287,6 +441,26 @@ $usuario.addEventListener('blur',()=>{
 const $numeroClinica = document.getElementById("numeroclinica")
 
 $numeroClinica.addEventListener('blur',()=>{
+  function Caracter_invalido() {
+    var texto = document.getElementById("numeroclinica")
+    var teste = texto.value.split("");
+    var chars_invalidos = [",", "=", "/", "(", ")", "*", "'"];
+    console.log(chars_invalidos)
+    console.log(teste)
+    for (var i = 0; i < teste.length; i++) {
+      for (var c = 0; c < chars_invalidos.length; c++) {
+        if (chars_invalidos[c] === teste[i]) {
+          window.alert("Erro")
+          console.log("1")
+          disabled=true
+          Caracter_invalido()
+        } else if (teste[i] !== chars_invalidos[i]) {
+          console.log("0")
+          console.log(teste[i])
+        }
+      }
+    }
+  }
   
   const inputUsuario = $numeroClinica.value
 
