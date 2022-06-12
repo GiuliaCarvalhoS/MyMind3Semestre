@@ -1,0 +1,179 @@
+#login{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+
+  
+}
+
+ .centralizar{
+  width: fit-content;
+  max-width: 40%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: aliceblue;  
+  border-radius: 10px;
+  box-shadow: 1px 6px 17px rgb(0 0 0 / 38%);
+  margin-top: 50px;
+
+  
+  
+  
+
+} 
+.container-login{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-login .close-button{
+  height: 40px;
+  width: 40px;
+  margin-left: 50px;
+}
+
+
+.container-login .close-button:hover{
+  background-color: rgba(0, 0, 0, 0.509);
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-right: 5px;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+.container:hover input ~ .checkmark {
+  background-color: #ccc;}
+
+  .container input:checked ~ .checkmark {
+      background-color: #60B2FF;
+    }
+    
+   
+  .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+   
+  .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+    
+    
+  .container .checkmark:after {
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    .botaoAcessar{
+      padding: 5px;
+
+    }
+    
+    .botaoCadastrar{
+      padding: 5px;
+
+    }
+    
+
+#btn-entrar{
+margin-top: 20px;
+background-color: #18C29C;
+}
+#btn-cadastrarLogin{
+margin: 20px;
+margin-top: 40px;
+}
+#btn-esquecer{
+margin-top: 20px;
+}
+#btn-cadastrarLogin:hover{
+background-color: #1f5cb3;
+}
+#btn-entrar:hover{
+background-color: #12997c;
+}
+#btn-esquecer:hover{
+background-color:#1f5cb3;
+}
+#txt-lembrarSenha{
+color: #0D2E5C;
+  font-weight: bold;
+  font-family: Podkova;
+  font-size: 20px;
+  margin-top: 20px;
+  
+}
+.txtlogin{
+color: #0D2E5C;
+font-weight: bold;
+font-family: Podkova;
+font-size: 20px;
+
+}
+.txtnovasenha{
+color: #0D2E5C;
+font-weight: bold;
+font-family: Podkova;
+font-size: 20px;
+
+}
+.txtconfirmarsenha{
+color: #0D2E5C;
+font-weight: bold;
+font-family: Podkova;
+font-size: 20px;
+
+}
+#msg-erroSenha{
+  display:block;
+}
+
+
+@media only screen and (max-width:886px) {
+  .centralizar{
+    min-width: 100%;
+  }
+}

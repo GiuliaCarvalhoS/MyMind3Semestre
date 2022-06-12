@@ -42,6 +42,8 @@ module.exports ={
 
   const userId = req.userId
 
+  console.log(`Este é user id: ${userId}`)
+
     
     try{
       

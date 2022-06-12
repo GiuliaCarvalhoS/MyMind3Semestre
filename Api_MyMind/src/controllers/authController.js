@@ -2,7 +2,7 @@
 const knex = require('../database')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const axios = require('axios').default;
+const axios = require('axios').default
 
 const authConfig = require( '../config/auth.json')
 
@@ -33,15 +33,20 @@ module.exports ={
         })
 
         
-
-        return axios({
-          method: 'post',
-          url: '/feed',
-          userToken:token
-        });
-
+         
         
-      
+        
+        const response= await axios.get('http://127.0.0.1:3333/feed',
+          {
+        
+            headers: {
+                "Authorization" : `Bearer ${token}`
+              }
+          }
+          
+        )
+          
+          return res.send(response.data)
         
 
       
