@@ -56,7 +56,7 @@ $btnEntrar.addEventListener('click',()=>{
     
     window.localStorage.setItem("usuarios",JSON.stringify(usuarios))
   
-    const caminho = '.././Interno/Paciente/perfilPaciente.html'
+    const caminho = "./PaginaFeed/FeedPsicologo.html"
     
 
     window.location.assign(caminho)

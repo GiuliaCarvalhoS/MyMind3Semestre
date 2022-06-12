@@ -1,6 +1,9 @@
 
 import cardPublication from '../cardPublication/index.js'
 
+console.log("oi") 
+
+
 //como cada funcção retonrna um html é preciso executala e armazar seu retorno em uma variavel
 
 // const data = await fetch("http://127.0.0.1:3333/feed").then(feed => feed.json()).then(data=>{
@@ -17,9 +20,17 @@ import cardPublication from '../cardPublication/index.js'
  
 // }) 
 
-const body = {
-  nomeUsuario:"sss7",
-	senhaUsuario:"arroz"
+function acessar(){
+
+  
+  const nomeUsuario =  document.getElementById('usuario').value
+  const senhaUsuario = document.getElementById('senha').value
+        
+const body  = {
+
+  nomeUsuario,
+  
+	senhaUsuario
 }
 
 const data = await fetch("http://127.0.0.1:3333/login",
@@ -44,6 +55,16 @@ const data = await fetch("http://127.0.0.1:3333/login",
   }
  
 }) 
+const caminho = "./PaginaFeed/FeedPsicologo.html"
+
+
+window.location.assign(caminho)
+
+
+
+}
+
+
 
 const $cardPublication = cardPublication(data)
 
